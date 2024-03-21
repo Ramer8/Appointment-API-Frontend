@@ -1,0 +1,18 @@
+.headerDesign {
+    height: 9vh;
+    width: 100vw;
+
+    /* background-color: cadetblue; */
+
+    border: solid 1px grey;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
