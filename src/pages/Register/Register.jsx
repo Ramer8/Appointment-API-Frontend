@@ -4,13 +4,8 @@ import { registerMe } from "../../services/apiCalls"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
 import { useNavigate } from "react-router-dom"
 // import Spinner from "../../common/Spinner/Spinner"
-export const Register = ({
-  msgError,
-  setMsgError,
-  credential,
-  setCredential,
-}) => {
-  const [loadingFlag, setLoadingFlag] = useState(false)
+export const Register = ({ msgError, setMsgError, setCredential }) => {
+  const [loadingFlag] = useState(false)
   const [credenciales, setCredenciales] = useState({
     firstName: "",
     lastName: "",

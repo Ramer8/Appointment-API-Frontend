@@ -2,13 +2,9 @@ import { useEffect, useState } from "react"
 import { fetchMyProfile } from "../../services/apiCalls"
 import "./Home.css"
 
-export const Home = ({
-  usefullDataToken,
-  setUsefullDataToken,
-  msgError,
-  setMsgError,
-}) => {
+export const Home = ({ usefullDataToken, msgError }) => {
   const [dataToShow, setDataToShow] = useState()
+
   useEffect(() => {
     const fetching = async () => {
       try {

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 
 const Profile = ({ usefullDataToken }) => {
   const [dataToShow, setDataToShow] = useState()
+
   const dataUser = JSON.parse(localStorage.getItem("decoded"))
   const navigate = useNavigate()
 
@@ -28,7 +29,7 @@ const Profile = ({ usefullDataToken }) => {
     }
 
     fetching()
-  }, [usefullDataToken]) // Execute useEffect whenever the token changes
+  }, [dataUser.token, usefullDataToken]) // Execute useEffect whenever the token changes
   return (
     <div className="profileDesign">
       <h1>Profile Page</h1>

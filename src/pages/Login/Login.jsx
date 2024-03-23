@@ -9,9 +9,7 @@ import { useNavigate } from "react-router-dom"
 export const Login = ({
   msgError,
   setMsgError,
-  credential,
   setCredential,
-  usefullDataToken,
   setUsefullDataToken,
 }) => {
   // const [msgError, setMsgError] = useState("")
