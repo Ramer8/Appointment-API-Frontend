@@ -6,13 +6,8 @@ import "./Login.css"
 import { loginMe } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 
-export const Login = ({
-  msgError,
-  setMsgError,
-  setCredential,
-  setUsefullDataToken,
-}) => {
-  // const [msgError, setMsgError] = useState("")
+export const Login = () => {
+  const [msgError, setMsgError] = useState("")
 
   const [credenciales, setCredenciales] = useState({
     email: "",
@@ -64,9 +59,9 @@ export const Login = ({
 
     const fetched = await loginMe(credenciales)
 
-    if (fetched.success) {
-      setCredential("")
-    }
+    // if (fetched.success) {
+    //   setCredential("")
+    // }
 
     if (!fetched.success) {
       setMsgError(fetched.message)
@@ -91,10 +86,10 @@ export const Login = ({
     // sessionStorage.setItem("decoded", JSON.stringify(decoded))
     // let d = JSON.parse(sessionStorage.getItem("decoded"))
 
-    setUsefullDataToken({
-      tokenData: decodeToken(fetched.token),
-      token: fetched.token,
-    })
+    // setUsefullDataToken({
+    //   tokenData: decodeToken(fetched.token),
+    //   token: fetched.token,
+    // })
 
     //Home redirected
     navigate("/profile")

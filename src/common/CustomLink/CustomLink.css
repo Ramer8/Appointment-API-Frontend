@@ -1,6 +1,4 @@
 .navigateDesign {
-
-    font-weight: bold;
     color: whitesmoke;
 
     transition: 0.4s;
@@ -8,6 +6,7 @@
     margin-bottom: 1.4em;
     margin-left: 1em;
     border-radius: 1em;
+    font-weight: lighter;
 
 }
 
@@ -15,6 +14,5 @@
     cursor: pointer;
     transition: 0.4s;
     text-shadow: fuchsia 2px 0 20px;
-
-
+    font-weight: 600;
 }

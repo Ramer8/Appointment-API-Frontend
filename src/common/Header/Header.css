@@ -3,7 +3,6 @@
     width: 100vw;
 
     /* background-color: cadetblue; */
-
     border: solid 1px grey;
     border-radius: 2em;
     display: flex;
@@ -15,4 +14,14 @@
 .menu {
     display: flex;
     flex-direction: row;
+
+}
+
+.menuHighlighted {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    color: deeppink;
+    font-weight: bolder;
+
 }

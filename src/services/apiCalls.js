@@ -22,7 +22,7 @@ export const loginMe = async (credenciales) => {
     // )
 
     const data = await response.json()
-    console.log(data)
+    console.log("DATA FROM LOGIN", data)
 
     if (!data.success) {
       throw new Error(data.message)

@@ -4,7 +4,9 @@ import { registerMe } from "../../services/apiCalls"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
 import { useNavigate } from "react-router-dom"
 // import Spinner from "../../common/Spinner/Spinner"
-export const Register = ({ msgError, setMsgError, setCredential }) => {
+export const Register = () => {
+  const [msgError, setMsgError] = useState("")
+
   const [loadingFlag] = useState(false)
   const [credenciales, setCredenciales] = useState({
     firstName: "",
@@ -47,7 +49,7 @@ export const Register = ({ msgError, setMsgError, setCredential }) => {
       setMsgError(fetched.message)
       return
     }
-    setCredential(credenciales)
+    //  setCredential(credenciales)
     //Login redirected
     navigate("/login")
   }
