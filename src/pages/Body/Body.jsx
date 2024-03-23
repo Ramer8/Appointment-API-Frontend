@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom"
 import { Home } from "../Home/Home"
 import { Login } from "../Login/Login"
 import { Register } from "../Register/Register"
+import Profile from "../Profile/Profile"
 
 export const Body = () => {
   const [msgError, setMsgError] = useState("")
@@ -49,6 +50,10 @@ export const Body = () => {
             setCredential={setCredential}
           />
         }
+      />
+      <Route
+        path="/profile"
+        element={<Profile usefullDataToken={usefullDataToken} />}
       />
     </Routes>
   )

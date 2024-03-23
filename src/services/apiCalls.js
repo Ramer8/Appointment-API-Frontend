@@ -1,4 +1,9 @@
 export const loginMe = async (credenciales) => {
+  // console.log(import.meta.env.VITE_API_URL)
+  //    http://localhost:4500/api
+
+  // `${import.meta.env.VITE_API_URL}users/profile`,
+
   const options = {
     method: "POST",
     headers: {
@@ -9,12 +14,16 @@ export const loginMe = async (credenciales) => {
 
   try {
     const response = await fetch(
-      `http://localhost:4500/api/auth/login`,
+      `${import.meta.env.VITE_API_URL}/auth/login`,
       options
     )
+    //   `http://localhost:4500/api/auth/login`,
+    //   options
+    // )
 
     const data = await response.json()
     console.log(data)
+
     if (!data.success) {
       throw new Error(data.message)
     }
@@ -37,8 +46,10 @@ export const registerMe = async (credenciales) => {
 
   try {
     const response = await fetch(
-      `http://localhost:4500/api/auth/register`,
-
+      //   `http://localhost:4500/api/auth/register`,
+      //   options
+      // )
+      `${import.meta.env.VITE_API_URL}/auth/register`,
       options
     )
 
@@ -64,9 +75,13 @@ export const fetchMyProfile = async (token) => {
   }
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}users/profile`,
+      //   "http://localhost:4500/api/users/profile",
+      //   options
+      // )
+      `${import.meta.env.VITE_API_URL}/users/profile`,
       options
     )
+    // `${import.meta.env.VITE_API_URL}users/profile`,
 
     const data = await response.json()
     if (!data.success) {

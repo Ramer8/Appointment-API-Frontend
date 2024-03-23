@@ -50,7 +50,6 @@ export const Login = ({
   // }
   // const { name, ...newcredential } = credential
   const inputHandler = (e) => {
-    console.log(credenciales)
     setCredenciales((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -76,17 +75,23 @@ export const Login = ({
 
       return
     }
-    const decodificado = decodeToken(fetched.token)
-    console.log(decodificado)
+    // const decodificado = decodeToken(fetched.token)
+    // console.log(decodificado)
 
-    //ahora si funciona esta forma de guardar en localstorage
-    localStorage.setItem("decodificado", JSON.stringify(decodificado))
-    let a = JSON.parse(localStorage.getItem("decodificado"))
+    const decoded = {
+      tokenData: decodeToken(fetched.token),
+      token: fetched.token,
+    }
 
-    console.log(a)
+    //ahora si funciona esta forma de guardar en localStorage
+    localStorage.setItem("decoded", JSON.stringify(decoded))
 
-    sessionStorage.setItem("token", fetched)
-    sessionStorage.setItem("user", JSON.stringify(decodificado))
+    // let a = JSON.parse(localStorage.getItem("decoded"))
+    // console.log(a)
+
+    //ahora si funciona esta forma de guardar en sessionStorage
+    // sessionStorage.setItem("decoded", JSON.stringify(decoded))
+    // let d = JSON.parse(sessionStorage.getItem("decoded"))
 
     setUsefullDataToken({
       tokenData: decodeToken(fetched.token),
@@ -94,12 +99,13 @@ export const Login = ({
     })
 
     //Home redirected
-    navigate("/")
+    navigate("/profile")
   }
 
   return (
     <div className="loginDesign">
       <pre>{JSON.stringify(credenciales, null, 2)}</pre>
+
       <CustomInput
         design="inputDesign"
         type="email"
