@@ -7,14 +7,19 @@
     justify-content: center;
     align-items: center;
 
-    /* background-color: lightskyblue; */
+}
+
+.footer {
+    height: 30vh;
+    width: 100vw;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .loginButton {
-
-    /* height: 2.5em;
-
-    width: 10em; */
     padding: .5rem 2rem;
     height: 2.5em;
     width: 15em;
@@ -22,11 +27,10 @@
     text-transform: uppercase;
     font-weight: 900;
     font-size: medium;
-    background-color: violet;
-    border-radius: 0.4em;
+    background-color: deeppink;
+    border-radius: 2em;
     transition: 0.4s;
     color: black;
-    font-weight: bolder !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,11 +41,14 @@
 
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 10px 10px 60px white;
     box-shadow: 10px 10px 60px fuchsia;
 }
 
 .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: red;
     color: white;
     font-weight: bolder;
