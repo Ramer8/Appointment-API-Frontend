@@ -19,30 +19,6 @@
     align-items: center;
 }
 
-.loginButton {
-    padding: .5rem 2rem;
-    height: 2.5em;
-    width: 15em;
-    margin: 1em;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: medium;
-    background-color: deeppink;
-    border-radius: 2em;
-    transition: 0.4s;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 10px 10px 60px grey;
-}
-
-.loginButton:hover {
-
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 10px 10px 60px fuchsia;
-}
 
 .error {
     display: flex;

@@ -6,6 +6,8 @@ import "./Login.css"
 import { loginMe } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { valide } from "../../utils/functions"
+import { CustomButton } from "../../common/CustomButton/CustomButton"
+// import { CustomButton } from "../../common/CustomButton/CustomButton"
 
 export const Login = () => {
   const [msgError, setMsgError] = useState("")
@@ -116,9 +118,13 @@ export const Login = () => {
           functionChange={inputHandler}
           onBlurFunction={(e) => checkError(e)}
         />
-        <div className="loginButton" onClick={logMe}>
-          Log me!
-        </div>
+
+        <CustomButton
+          className={"loginButton"}
+          title={"Login"}
+          functionEmit={logMe}
+        />
+
         <div className="footer">
           {credencialesError.emailError && (
             <div className="error">{credencialesError.emailError}</div>
