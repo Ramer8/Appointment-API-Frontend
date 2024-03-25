@@ -28,7 +28,7 @@
     color: whitesmoke;
 }
 
-.loginButton:hover {
+.editButton:hover {
 
     cursor: pointer;
     transition: 0.3s;
@@ -78,4 +78,23 @@
 
 .cButtonGreen:hover {
     background-color: darkgreen;
+}
+
+.cardButton {
+    padding: .5rem 2rem;
+    height: 2.5em;
+    width: 15em;
+    margin: 1em;
+    border: 1px solid #ffffff40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.cardButton:hover {
+    box-shadow: 10px 10px 60px fuchsia;
+    transition: 0.4s;
 }

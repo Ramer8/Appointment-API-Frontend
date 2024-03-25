@@ -120,3 +120,26 @@ export const updateProfile = async (data, token) => {
     return error
   }
 }
+
+export const getServices = async () => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/services`,
+      options
+    )
+
+    const data = await response.json()
+    if (!data.success) {
+      throw new Error(data.message)
+    }
+    return data
+  } catch (error) {
+    return error
+  }
+}

@@ -1,0 +1,14 @@
+.serviceDesign {
+    /* height: 88vh;
+    width: 100vw; */
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    overflow: block
+        /* display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1em; */
+}

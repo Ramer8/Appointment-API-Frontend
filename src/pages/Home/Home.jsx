@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import { fetchMyProfile } from "../../services/apiCalls"
 import "./Home.css"
+import Services from "../Services/Services"
+import { Navigate } from "react-router-dom"
+import { CustomLink } from "../../common/CustomLink/CustomLink"
 
 export const Home = ({ usefullDataToken, msgError }) => {
   const [dataToShow, setDataToShow] = useState()
@@ -29,8 +32,16 @@ export const Home = ({ usefullDataToken, msgError }) => {
   return (
     <div className="homeDesign">
       <div>{msgError}</div>
-      <h1> LANDING PAGE 🛬 </h1>
+      <h1> HOME </h1>
       <h2>{dataToShow && `Welcome ${dataToShow?.firstName}`}</h2>
+      <CustomLink
+        title="Services"
+        destination="/services"
+        className={""}
+        // className={`${
+        //   location.pathname === "/register" ? "menuHighlighted" : "menu"
+        // }`}
+      />
     </div>
   )
 }
