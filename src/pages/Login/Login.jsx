@@ -95,7 +95,6 @@ export const Login = () => {
           className={`inputDesign ${
             credencialesError.emailError !== "" ? "inputDesignError" : ""
           }`}
-          // design="inputDesign"
           type="email"
           name="email"
           disabled={""}
@@ -109,7 +108,6 @@ export const Login = () => {
           className={`inputDesign ${
             credencialesError.passwordBodyError !== "" ? "inputDesignError" : ""
           }`}
-          // design="inputDesign"
           type="password"
           name="passwordBody"
           disabled={""}

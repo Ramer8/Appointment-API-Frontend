@@ -23,8 +23,20 @@
     box-shadow: 10px 10px 60px fuchsia;
 }
 
-.updateData {
+.editButton {
     background-color: blue;
+    color: whitesmoke;
+}
+
+.loginButton:hover {
+
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 10px 10px 60px blue;
+}
+
+.updateData {
+    background-color: green;
     color: aliceblue;
 }
 
@@ -32,7 +44,7 @@
 
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 10px 10px 60px blue;
+    box-shadow: 10px 10px 60px green;
 }
 
 .cButtonDesign {

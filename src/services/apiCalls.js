@@ -93,7 +93,7 @@ export const fetchMyProfile = async (token) => {
   }
 }
 
-export const updateProfile = async (token, data) => {
+export const updateProfile = async (data, token) => {
   const options = {
     method: "PUT",
     headers: {
