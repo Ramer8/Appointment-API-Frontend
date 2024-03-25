@@ -87,6 +87,33 @@ export const fetchMyProfile = async (token) => {
     if (!data.success) {
       throw new Error(data.message)
     }
+    return data
+  } catch (error) {
+    return error
+  }
+}
+
+export const updateProfile = async (token, data) => {
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  }
+
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/users/profile`,
+      options
+    )
+
+    const data = await response.json()
+
+    if (!data.success) {
+      throw new Error(data.message)
+    }
 
     return data
   } catch (error) {

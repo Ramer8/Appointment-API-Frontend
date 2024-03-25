@@ -13,7 +13,7 @@ export const Header = () => {
   }
 
   return (
-    <div>
+    <>
       <div className="headerDesign">
         <CustomLink
           title="Home"
@@ -59,6 +59,6 @@ export const Header = () => {
       >
         <Outlet />
       </main>
-    </div>
+    </>
   )
 }

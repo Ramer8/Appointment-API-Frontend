@@ -23,6 +23,18 @@
     box-shadow: 10px 10px 60px fuchsia;
 }
 
+.updateData {
+    background-color: blue;
+    color: aliceblue;
+}
+
+.updateData:hover {
+
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 10px 10px 60px blue;
+}
+
 .cButtonDesign {
 
     height: 3em;
