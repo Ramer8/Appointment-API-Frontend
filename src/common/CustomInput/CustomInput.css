@@ -6,11 +6,11 @@
     height: 2.5em;
     width: 15em;
     margin: 1em;
-    box-shadow: 1px 1px 5px darkgray;
-
-    background: whitesmoke;
+    /* box-shadow: 1px 1px 5px darkgray; */
+    box-shadow: 1.5px 1.5px 5px 0px fuchsia;
+    background: none;
     border: none;
-    color: black;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 1em;
     outline: white;
@@ -24,4 +24,6 @@
 .inputBlock {
     cursor: not-allowed;
     opacity: 0.5;
+    box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.737);
+    color: whitesmoke;
 }

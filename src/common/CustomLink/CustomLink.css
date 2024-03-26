@@ -16,3 +16,8 @@
     text-shadow: fuchsia 2px 0 20px;
     font-weight: 600;
 }
+
+.services {
+    padding: .7em 4em;
+    box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.341);
+}

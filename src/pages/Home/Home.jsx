@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import { fetchMyProfile } from "../../services/apiCalls"
 import "./Home.css"
-import Services from "../Services/Services"
-import { Navigate } from "react-router-dom"
 import { CustomLink } from "../../common/CustomLink/CustomLink"
 
 export const Home = ({ usefullDataToken, msgError }) => {
@@ -35,9 +33,9 @@ export const Home = ({ usefullDataToken, msgError }) => {
       <h1> HOME </h1>
       <h2>{dataToShow && `Welcome ${dataToShow?.firstName}`}</h2>
       <CustomLink
-        title="Services"
+        title="View Services "
         destination="/services"
-        className={""}
+        className="services"
         // className={`${
         //   location.pathname === "/register" ? "menuHighlighted" : "menu"
         // }`}

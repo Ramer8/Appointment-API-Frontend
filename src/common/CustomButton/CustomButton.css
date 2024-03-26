@@ -4,7 +4,7 @@
     width: 15em;
     margin: 1em;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 500;
     font-size: medium;
     background-color: deeppink;
     border-radius: 2em;
@@ -47,45 +47,13 @@
     box-shadow: 10px 10px 60px green;
 }
 
-.cButtonDesign {
-
-    height: 3em;
-    width: 18em;
-
-    border-radius: 0.5em;
-
-    background-color: red;
-    color: white;
-    font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-}
-
-
-.cButtonDesign:hover {
-
-    cursor: pointer;
-    transition: 0.2s;
-    background-color: darkred;
-}
-
-.cButtonGreen {
-    background-color: green;
-}
-
-.cButtonGreen:hover {
-    background-color: darkgreen;
-}
-
 .cardButton {
-    padding: .5rem 2rem;
+    padding: .5rem .5rem;
     height: 2.5em;
-    width: 15em;
+    width: 9em;
     margin: 1em;
-    border: 1px solid #ffffff40;
+    /* border: 1px solid #ffffff40; */
+    box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.341);
     display: flex;
     justify-content: center;
     align-items: center;

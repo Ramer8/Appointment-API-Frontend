@@ -89,7 +89,7 @@ export const Login = () => {
   return (
     <div>
       <div className="loginDesign">
-        <pre>{JSON.stringify(credenciales, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
 
         <CustomInput
           className={`inputDesign ${

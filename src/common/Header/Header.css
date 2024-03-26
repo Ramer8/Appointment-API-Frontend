@@ -2,12 +2,13 @@
     height: 9vh;
     width: 100vw;
 
-    border: solid 1px grey;
+    /* border: solid 1px grey; */
     border-radius: 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
+    box-shadow: 1px 1px 5px 1px rgba(255, 0, 238, 0.341);
 }
 
 .menu {
