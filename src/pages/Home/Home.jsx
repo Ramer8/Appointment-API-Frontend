@@ -3,6 +3,7 @@ import { fetchMyProfile } from "../../services/apiCalls"
 import "./Home.css"
 import { CustomLink } from "../../common/CustomLink/CustomLink"
 import Appointments from "../Appointments/Appointments"
+import Services from "../Services/Services"
 
 export const Home = ({ usefullDataToken, msgError }) => {
   const [dataToShow, setDataToShow] = useState()
@@ -31,9 +32,11 @@ export const Home = ({ usefullDataToken, msgError }) => {
   return (
     <div className="homeDesign">
       <div>{msgError}</div>
-      <h1> HOME </h1>
+
       <h2>{dataToShow && `Welcome ${dataToShow?.firstName}`}</h2>
+
       <Appointments />
+
       <CustomLink
         title="View Services "
         destination="/services"

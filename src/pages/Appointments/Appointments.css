@@ -1,0 +1,32 @@
+.appointmentDesign {
+    margin-top: 0em;
+    /* height: 88vh;
+    width: 100vw; */
+    padding-inline: 2em;
+    border-radius: 2em;
+    border: 1px solid #ffffff40;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: medium;
+    color: whitesmoke
+}
+
+.option {
+    color: fuchsia;
+}
+
+.appointmentList {
+    border: 1px solid #ffffff40;
+    padding: 1em 2em;
+    margin-bottom: 1em;
+    border-radius: 2em;
+}
+
+.appointmentBox {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
