@@ -1,6 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { CustomLink } from "../CustomLink/CustomLink"
-
 import "./Header.css"
 export const Header = () => {
   const location = useLocation()
@@ -16,10 +15,18 @@ export const Header = () => {
     <>
       <div className="headerDesign">
         <CustomLink
-          title="Home"
+          title={`${
+            location.pathname === "/"
+              ? "Home"
+              : location.pathname === "/services"
+              ? "Services"
+              : "Home"
+          }`}
           destination="/"
           className={`${
-            location.pathname === "/" ? "menuHighlighted" : "menu"
+            location.pathname === "/" || location.pathname === "/services"
+              ? "menuHighlighted"
+              : "menu"
           }`}
         />
         {decoded?.token ? (

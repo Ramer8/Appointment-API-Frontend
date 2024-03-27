@@ -6,11 +6,10 @@ import { CustomButton } from "../../common/CustomButton/CustomButton"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
 
 const Profile = ({ usefullDataToken }) => {
-  const dataUser = JSON.parse(localStorage.getItem("decoded"))
-  const navigate = useNavigate()
-
   const [write, setWrite] = useState("disabled")
-  const [tokenStorage, setTokenStorage] = useState(dataUser?.token)
+  const [tokenStorage, setTokenStorage] = useState(
+    JSON.parse(localStorage.getItem("decoded")).token
+  )
   const [loadedData, setLoadedData] = useState(false)
   const [msgSuccess, setMsgSuccess] = useState("")
 
@@ -25,6 +24,8 @@ const Profile = ({ usefullDataToken }) => {
     lastNameError: "",
     emailError: "",
   })
+
+  const navigate = useNavigate()
 
   const SUCCESS_MSG_TIME = 8000
 

@@ -143,3 +143,27 @@ export const getServices = async () => {
     return error
   }
 }
+
+export const getMyAppointments = async (token) => {
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/appointments`,
+      options
+    )
+
+    const data = await response.json()
+    if (!data.success) {
+      throw new Error(data.message)
+    }
+    return data
+  } catch (error) {
+    return error
+  }
+}
