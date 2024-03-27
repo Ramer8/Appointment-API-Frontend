@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -8,21 +10,22 @@ body {
 }
 
 .card {
-    height: 68vh;
+    height: 58vh;
     width: 20vw;
     display: flex;
     flex-direction: column;
     flex: 0 0 100%;
-    padding: 2em;
     /* border: 1px solid #ffffff40; */
     border-radius: 2em;
     box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.341);
     scroll-snap-align: end;
     transition: all 0.2s;
+    opacity: 70%;
+
 }
 
 .card:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 1px;
 }
 
 .card:hover {
@@ -31,17 +34,40 @@ body {
 }
 
 .card .card-title {
-    font-size: 1.3em;
-    color: fuchsia
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    font-size: 2em;
+    padding-left: .5em;
+    opacity: 1;
+    padding-bottom: 1.7em;
 }
 
+/* .spacing {
+    height: 20vh;
+
+} */
+
 .card .card-content {
+
     margin: 2em 0;
     max-width: 85%;
+    padding-inline: 1em;
+    opacity: 1;
 }
 
 .card .card-link-wrapper {
     margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }
 
 /* .card .card-link {
@@ -75,9 +101,21 @@ body {
     background: black;
 }
 
+@media (min-width: 300px) {
+    .card {
+        flex-basis: calc(65% - -.5em - -1.5em);
+    }
+
+    .card:not(:last-child) {
+        margin-right: .5px;
+
+    }
+}
+
 @media (min-width: 500px) {
     .card {
-        flex-basis: calc(50% - 10px);
+        flex-basis: calc(50% - 1em);
+        height: 10%;
     }
 
     .card:not(:last-child) {
@@ -87,7 +125,8 @@ body {
 
 @media (min-width: 700px) {
     .card {
-        flex-basis: calc(calc(100% / 3) - 20px);
+        flex-basis: calc(calc(100% / 3) - 10px);
+        width: 50%;
     }
 
     .card:not(:last-child) {

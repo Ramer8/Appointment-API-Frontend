@@ -10,17 +10,18 @@
 }
 
 .container {
-    max-width: 1500px;
+    /* max-width: 1500px; */
     height: 88vh;
-    padding: 0 15px;
+    padding: 0 0px;
     margin: 0 auto;
-    margin-left: 10em;
+    /* margin-left: 1em; */
 }
 
 .cards {
     display: flex;
-    padding: 25px 0px;
+    padding: 8px 0px;
     list-style: none;
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
 }

@@ -14,6 +14,7 @@ const Services = () => {
           //  setMsgError(fetched.message)
         }
         // setLoadedData(true)
+        console.log(fetched.data)
         setServices(fetched.data)
         // setServices({
         //   serviceName: fetched.data.serviceName,
@@ -28,6 +29,12 @@ const Services = () => {
       fetchServices()
     }
   }, [])
+  // const styles = {
+  //   backgroundImage: `url(${element.image})`,
+  //   backgroundSize: "cover",
+  //   width: "100%",
+  //   height: "100vh",
+  // }
   return (
     <>
       {!services ? (

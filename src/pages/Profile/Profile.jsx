@@ -71,7 +71,7 @@ const Profile = ({ usefullDataToken }) => {
     if (!loadedData) {
       fetching()
     }
-  }, [loadedData, tokenStorage, usefullDataToken, user]) // Execute useEffect whenever the user changes
+  }, [tokenStorage]) // Execute useEffect whenever the user changes
 
   const updateData = async () => {
     try {
