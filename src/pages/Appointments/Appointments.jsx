@@ -6,7 +6,6 @@ import {
   getServices,
 } from "../../services/apiCalls"
 import "./Appointments.css"
-import { CustomButton } from "../../common/CustomButton/CustomButton"
 import AppointmentModal from "./AppointmentModal"
 
 const Appointments = () => {
