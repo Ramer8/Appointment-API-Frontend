@@ -141,3 +141,16 @@
     border: 2px blue solid;
     background-color: transparent;
 }
+
+.closeModalButton {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    color: white;
+}
+
+.closeModalButton:hover {
+    cursor: pointer;
+    color: grey;
+    font-size: large;
+}

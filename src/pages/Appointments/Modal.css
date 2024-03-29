@@ -7,7 +7,7 @@
       bottom: auto;
       margin-right: -50%;
       transform: translate(-50%, -50%);
-      padding: 6em;
+      padding: 2em;
       opacity: .85;
       border-radius: 1em;
       border: 1px solid gray;
@@ -25,4 +25,18 @@
       background-color: rgba(11, 10, 10, 0.282);
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(3px);
+  }
+
+  .modalBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
   }
