@@ -195,3 +195,30 @@ export const createAppointment = async (data, token) => {
     return error
   }
 }
+
+export const deleteAppointment = async (id, token) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/appointments/${id}`,
+      options
+    )
+
+    const data = await response.json()
+    console.log("appointment deleted is", data)
+    if (!data.success) {
+      throw new Error(data.message)
+    }
+
+    return data
+  } catch (error) {
+    return error
+  }
+}

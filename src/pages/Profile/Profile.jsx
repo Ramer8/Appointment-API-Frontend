@@ -97,8 +97,7 @@ const Profile = ({ usefullDataToken }) => {
     <>
       <div className="profileDesign">
         <h1>Profile Page</h1>
-        Hi!
-        {user?.firstName}
+        Hi! {user?.firstName}
         {!loadedData ? (
           <div>CARGANDO</div>
         ) : (

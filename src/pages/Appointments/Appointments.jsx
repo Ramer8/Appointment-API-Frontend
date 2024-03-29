@@ -7,10 +7,12 @@ import {
 } from "../../services/apiCalls"
 import "./Appointments.css"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
+import AppointmentModal from "./AppointmentModal"
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState()
   const [services, setServices] = useState()
+  const [appointmentChanged, setAppointmentChanged] = useState(false)
 
   const [data, setData] = useState()
   const [tokenStorage, setTokenStorage] = useState(
@@ -69,21 +71,21 @@ const Appointments = () => {
     }
 
     fetchServices()
-  }, [])
+  }, [appointmentChanged])
 
-  const createMyAppointment = async (date) => {
-    try {
-      const fetched = await createAppointment(data, tokenStorage)
-      console.log(fetched)
-      // setMsgSuccess("Profile Udated")
+  //   const createMyAppointment = async (date) => {
+  //     try {
+  //       const fetched = await createAppointment(data, tokenStorage)
+  //       console.log(fetched)
+  //       // setMsgSuccess("Profile Udated")
 
-      // setTimeout(() => {
-      //   setMsgSuccess("")
-      // }, SUCCESS_MSG_TIME)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //       // setTimeout(() => {
+  //       //   setMsgSuccess("")
+  //       // }, SUCCESS_MSG_TIME)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
 
   return (
     <>
@@ -92,11 +94,11 @@ const Appointments = () => {
           <div className="appointmentContainer">
             <h1>Appointments</h1>
             <div> + new / delete </div>
-            <CustomButton
+            {/* <CustomButton
               className={"createAppointment"}
               title={" + add New"}
               functionEmit={createMyAppointment(newAppointment)}
-            />
+            /> */}
             {/* <select
               className="select"
               value={newAppointment.service_id}
@@ -120,6 +122,12 @@ const Appointments = () => {
                   <div>
                     {new Date(element.appointmentDate).toLocaleDateString()}
                   </div>
+                  <AppointmentModal
+                    element={element}
+                    tokenStorage={tokenStorage}
+                    setAppointmentChanged={setAppointmentChanged}
+                    appointmentChanged={appointmentChanged}
+                  />
                 </div>
               ))}
             </div>
