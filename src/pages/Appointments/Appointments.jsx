@@ -36,13 +36,18 @@ const Appointments = () => {
     const fetching = async () => {
       try {
         const fetched = await getMyAppointments(tokenStorage)
-        console.log(fetched)
+
         if (!fetched?.success) {
+          if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED")
+            console.log("token expired")
+          setTokenStorage("")
+          localStorage.removeItem("decoded")
+          navigate("/login")
+
           //  setMsgError(fetched.message)
           throw new Error("Failed to fetch appointments data")
         }
         setAppointments(fetched.appointment)
-        console.log(fetched.appointment)
       } catch (error) {
         console.error(error)
       }
@@ -57,7 +62,6 @@ const Appointments = () => {
           //  setMsgError(fetched.message)
         }
         // setLoadedData(true)
-        console.log(fetched.data)
         setServices(fetched.data)
         // setServices({
         //   serviceName: fetched.data.serviceName,
@@ -115,17 +119,21 @@ const Appointments = () => {
             {/* //associate icons with each services// */}
             <div className="appointmentList">
               <h2>Appointment List</h2>
-              {appointments.map((element) => (
-                <div key={element.id} className="appointmentBox">
-                  <div>{element.service.serviceName}</div>
+              <hr />
+              {appointments.map((myAppointment) => (
+                <div key={myAppointment.id} className="appointmentBox">
+                  <div>{myAppointment.service.serviceName}</div>
                   <div>
-                    {new Date(element.appointmentDate).toLocaleDateString()}
+                    {new Date(
+                      myAppointment.appointmentDate
+                    ).toLocaleDateString()}
                   </div>
                   <AppointmentModal
-                    element={element}
+                    myAppointment={myAppointment}
                     tokenStorage={tokenStorage}
                     setAppointmentChanged={setAppointmentChanged}
                     appointmentChanged={appointmentChanged}
+                    services={services}
                   />
                 </div>
               ))}

@@ -222,3 +222,32 @@ export const deleteAppointment = async (id, token) => {
     return error
   }
 }
+
+export const updateMyAppointment = async (data, token) => {
+  console.log(data)
+  console.log(token)
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  }
+
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/appointments`,
+      options
+    )
+
+    const data = await response.json()
+
+    if (!data.success) {
+      throw new Error(data.message)
+    }
+    return data
+  } catch (error) {
+    return error
+  }
+}

@@ -7,10 +7,11 @@
       bottom: auto;
       margin-right: -50%;
       transform: translate(-50%, -50%);
-      padding: 2em;
-      opacity: .85;
+      padding: 1em;
+
+      background-color: rgba(255, 255, 255, 0.306);
       border-radius: 1em;
-      border: 1px solid gray;
+      /* border: 1px solid gray; */
       /*then quit border! */
   }
 
@@ -24,7 +25,8 @@
 
       background-color: rgba(11, 10, 10, 0.282);
       -webkit-backdrop-filter: blur(5px);
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(9px);
+
   }
 
   .modalBox {
@@ -39,4 +41,13 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+  }
+
+  .selectAppointment {
+      margin: .5em;
+      padding: 1em;
+      font-size: medium;
+      border: none;
+      border-radius: 1em;
+      outline: white;
   }
