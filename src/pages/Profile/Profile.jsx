@@ -53,6 +53,12 @@ const Profile = ({ usefullDataToken }) => {
 
         if (!fetched?.success) {
           //  setMsgError(fetched.message)
+          if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED") {
+            console.log("token expired")
+            setTokenStorage("")
+            localStorage.removeItem("decoded")
+            navigate("/login")
+          }
           if (!usefullDataToken === undefined) {
             throw new Error("Failed to fetch profile data")
           }
