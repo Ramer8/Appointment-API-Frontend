@@ -5,7 +5,6 @@ export const Header = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const decoded = JSON.parse(localStorage.getItem("decoded"))
-
   const logOut = () => {
     localStorage.removeItem("decoded")
     navigate("/login")
@@ -14,6 +13,17 @@ export const Header = () => {
   return (
     <>
       <div className="headerDesign">
+        {decoded.tokenData.roleName === "super_admin" && (
+          <div>
+            <CustomLink
+              title="Managment"
+              destination="/managment"
+              className={`${
+                location.pathname === "/managment" ? "menuHighlighted" : "menu"
+              }`}
+            />
+          </div>
+        )}
         <CustomLink
           title={`${
             location.pathname === "/"

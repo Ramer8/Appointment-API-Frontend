@@ -14,7 +14,7 @@ const Managment = () => {
     const fetching = async () => {
       try {
         const fetched = await fetchAllUsers(tokenStorage)
-        console.log(fetched)
+        console.log(fetched.data)
         if (!fetched?.success) {
           //  setMsgError(fetched.message)
           if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED") {
@@ -29,6 +29,7 @@ const Managment = () => {
           //  throw new Error("Failed to fetch profile data")
         }
         setLoadedData(true)
+        setUsers(fetched.data)
       } catch (error) {
         console.error(error)
       }
@@ -37,12 +38,38 @@ const Managment = () => {
       fetching()
     }
   }, [])
-
   return (
     <div className="managmentDesign">
-      Hello Super Admin
       <div className="userContainer">
-        <div className="user"></div>
+        User list
+        <hr />
+        {!users?.length && "No users loaded"}
+        {users && (
+          <div className="table">
+            <div className="header">
+              <div>ID</div>
+              <div>First Name</div>
+              <div>Last Name</div>
+              <div>Email</div>
+            </div>
+            <div className="body-container">
+              <div className="body">
+                {users?.map((user) => (
+                  <div key={user.id} className="row">
+                    <div>{user.id}</div>
+                    <div>{user.firstName}</div>
+                    <div>{user.lastName}</div>
+                    <div>{user.email}</div>
+                    <div>
+                      <input id="s1" type="checkbox" className="switch" />
+                      {/* <label htmlFor="s1"></label> */}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
