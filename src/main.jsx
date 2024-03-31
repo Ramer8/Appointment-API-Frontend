@@ -9,6 +9,7 @@ import { Register } from "./pages/Register/Register.jsx"
 import { Login } from "./pages/Login/Login.jsx"
 import Profile from "./pages/Profile/Profile.jsx"
 import Services from "./pages/Services/Services.jsx"
+import Managment from "./pages/Managment/Managment.jsx"
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/managment",
+        element: <Managment />,
       },
     ],
   }, // we can add the route that we need

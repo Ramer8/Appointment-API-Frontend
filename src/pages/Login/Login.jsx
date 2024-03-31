@@ -55,7 +55,7 @@ export const Login = () => {
     }
 
     const fetched = await loginMe(credenciales)
-
+    console.log(fetched.data.role)
     if (!fetched.success) {
       setMsgError(fetched.message)
 
@@ -77,8 +77,14 @@ export const Login = () => {
     // sessionStorage.setItem("decoded", JSON.stringify(decoded))
     // let d = JSON.parse(sessionStorage.getItem("decoded"))
 
+    if (fetched.data.role.title === "super_admin") {
+      console.log("its super admin")
+      navigate("/managment")
+      return
+    }
+
     //Home redirected
-    navigate("/profile")
+    navigate("/home")
   }
 
   return (

@@ -244,6 +244,7 @@ const Appointments = () => {
                 </form>
               )} */}
               <hr />
+              {!appointments.length && "Nothing Scheduled"}
               {appointments.map((myAppointment) => (
                 <div key={myAppointment.id} className="appointmentBox">
                   <div>{myAppointment.service.serviceName}</div>
