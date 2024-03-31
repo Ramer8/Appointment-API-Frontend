@@ -1,7 +1,11 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { CustomLink } from "../CustomLink/CustomLink"
 import "./Header.css"
+import { useState } from "react"
 export const Header = () => {
+  const [decoder, setDecoder] = useState(
+    JSON.parse(localStorage.getItem("decoded"))
+  )
   const location = useLocation()
   const navigate = useNavigate()
   const decoded = JSON.parse(localStorage.getItem("decoded"))
@@ -13,7 +17,7 @@ export const Header = () => {
   return (
     <>
       <div className="headerDesign">
-        {decoded.tokenData.roleName === "super_admin" && (
+        {decoder && decoder.tokenData.roleName === "super_admin" && (
           <div>
             <CustomLink
               title="Managment"
