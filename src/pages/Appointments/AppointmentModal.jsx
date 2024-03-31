@@ -8,40 +8,24 @@ import {
   updateMyAppointment,
 } from "../../services/apiCalls"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
+import { formatDate } from "../../utils/functions"
+
 const AppointmentModal = ({
   myAppointment,
   tokenStorage,
   setAppointmentChanged,
   appointmentChanged,
-  services,
 }) => {
-  let subtitle
   const [modalIsOpen, setIsOpen] = useState(false)
-  const [isShowingInput, setIsShowingInput] = useState(false)
   const [serviceToUpdate, setServiceToUpdate] = useState({
     appointmentDate: "",
     appointment_id: "",
   })
-  //     {
-  //     appointmentDate: "",
-  //     id: "",
-  //   })
 
-  //   console.log(services)
-  //   console.log(
-  //     " my appointments are",
-  //     myAppointment.appointmentDate
-  //     //   myAppointment.service.serviceName
-  //   )
   Modal.setAppElement("#root")
 
   function openModal() {
     setIsOpen(true)
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "blue"
   }
 
   function closeModal() {
@@ -51,13 +35,10 @@ const AppointmentModal = ({
   const fetching = async () => {
     try {
       const fetched = await getMyAppointments(tokenStorage)
-      //   console.log(fetched)
       if (!fetched?.success) {
         //  setMsgError(fetched.message)
         throw new Error("Failed to fetch appointments data")
       }
-      //   setAppointments(fetched.appointment)
-      //   console.log(fetched.appointment)
     } catch (error) {
       console.error(error)
     }
@@ -72,6 +53,9 @@ const AppointmentModal = ({
       //   setTimeout(() => {
       //     setMsgSuccess("")
       //   }, SUCCESS_MSG_TIME)
+      closeModal()
+      fetching()
+      setAppointmentChanged(!appointmentChanged)
     } catch (error) {
       console.log(error)
     }
@@ -93,46 +77,23 @@ const AppointmentModal = ({
       console.log(error)
     }
   }
-  // const inputHandler = (e) => {
-  //   setServiceToUpdate((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value,
-  //   }))
-  // }
+  const inputHandler = (e) => {
+    console.log(myAppointment.id)
 
-  function handleSubmit(e) {
-    // Prevent the browser from reloading the page
-    e.preventDefault()
-    // Read the form data
-    const form = e.target
-    const formData = new FormData(form)
-    //
-
-    // You can pass formData as a fetch body directly:
-    // fetch("/some-api", { method: form.method, body: formData })
-    // You can generate a URL out of it, as the browser does by default:
-    // console.log(new URLSearchParams(formData).toString())
-    // You can work with it as a plain object.
-    const formJson = Object.fromEntries(formData.entries())
-
-    console.log(formJson.id) // (!) This doesn't include multiple select values
-    console.log(Number(formJson.id))
-    // Or you can get an array of name-value pairs.
-    // console.log([...formData.entries()])
+    //   setServiceToUpdate((prevState) => ({
+    //     ...prevState,
+    //     appointment_id: myAppointment.id,
+    //     appointmentDate: myAppointment.appointmentDate,
+    //   }))
 
     setServiceToUpdate((prevState) => ({
       ...prevState,
-      appointment_id: Number(formJson.id),
-      appointmentDate: myAppointment.appointmentDate,
+      [e.target.name]: e.target.value,
+      appointment_id: myAppointment.id,
     }))
-
-    // setServiceToUpdate({
-    //   appointmentDate: myAppointment.appointmentDate,
-    //   appointment_id: Number(formJson.id),
-    // })
-    console.log("the service to update is", serviceToUpdate)
-    editAppointment(serviceToUpdate)
+    console.log(serviceToUpdate)
   }
+
   return (
     <div>
       <CustomButton
@@ -142,7 +103,6 @@ const AppointmentModal = ({
       />
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
         className="Modal"
@@ -164,9 +124,7 @@ const AppointmentModal = ({
           }
           functionEmit={closeModal}
         />
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
-          {myAppointment.service.serviceName} {myAppointment.id}
-        </h2>
+        <h2>{myAppointment.service.serviceName}</h2>
         <hr />
         <div className="modalBox">
           <div>{myAppointment.service.description}</div>
@@ -175,60 +133,22 @@ const AppointmentModal = ({
         </div>
         <hr />
 
-        <form method="post" onSubmit={handleSubmit}>
-          <label>Choose your service to update:</label>
-          <select
-            name="id"
-            defaultValue={myAppointment.service.id}
-            className="selectAppointment"
-          >
-            {services.map((appointmentToUpdate) => (
-              <option
-                key={appointmentToUpdate.id}
-                value={appointmentToUpdate.id}
-              >
-                {appointmentToUpdate.serviceName}
-              </option>
-            ))}
-          </select>
-
-          {/* <label>
-            Choose your new date:
-            <select
-              name="selectedVegetables"
-              multiple={true}
-              defaultValue={["corn", "tomato"]}
-            >
-              <option value="cucumber">Cucumber</option>
-              <option value="corn">Corn</option>
-              <option value="tomato">Tomato</option>
-            </select>
-          </label> */}
-          <hr />
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
-        </form>
-
-        {/* <CustomInput
-          className={
-            "input"
-            // `inputDesign ${
-            //   userError.emailError !== "" ? "inputDesignError" : ""
-            // }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
-          }
-          type={"text"}
-          placeholder={""}
-          name={"service"}
-          disabled={isShowingInput}
-          value={"" || ""}
-          functionChange={(e) => inputHandler(e)}
-          //   onBlurFunction={(e) => checkError(e)}
-        /> */}
         <div className="buttons">
+          <CustomInput
+            className={`inputDesign inputDate`}
+            type={"datetime-local"}
+            min={new Date()}
+            placeholder={""}
+            name={"appointmentDate"}
+            disabled={""}
+            value={formatDate(myAppointment.appointmentDate) || ""}
+            functionChange={(e) => inputHandler(e)}
+            //   onBlurFunction={(e) => checkError(e)}
+          />
           <CustomButton
             className={"editAppointment"}
-            title={"edit"}
-            functionEmit={() => editAppointment(myAppointment.id)}
+            title={"submit"}
+            functionEmit={() => editAppointment(serviceToUpdate)}
           />
           <CustomButton
             className={"deleteAppointment"}

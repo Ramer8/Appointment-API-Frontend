@@ -108,9 +108,7 @@ const Profile = ({ usefullDataToken }) => {
           <div>CARGANDO</div>
         ) : (
           <div>
-            <label className="text-gray-800" htmlFor="firstName">
-              First Name:
-            </label>
+            <label htmlFor="firstName">First Name:</label>
             <CustomInput
               className={
                 `inputDesign ${
@@ -125,9 +123,7 @@ const Profile = ({ usefullDataToken }) => {
               functionChange={(e) => inputHandler(e)}
               onBlurFunction={(e) => checkError(e)}
             />
-            <label className="text-gray-800" htmlFor="lastName">
-              Last Name:
-            </label>
+            <label htmlFor="lastName">Last Name:</label>
             <CustomInput
               className={
                 `inputDesign ${
@@ -142,9 +138,7 @@ const Profile = ({ usefullDataToken }) => {
               functionChange={(e) => inputHandler(e)}
               onBlurFunction={(e) => checkError(e)}
             />
-            <label className="text-gray-800" htmlFor="email">
-              Email:
-            </label>
+            <label htmlFor="email">Email:</label>
             <CustomInput
               id="email"
               className={

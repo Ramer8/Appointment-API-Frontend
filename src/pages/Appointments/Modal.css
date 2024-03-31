@@ -45,9 +45,12 @@
 
   .selectAppointment {
       margin: .5em;
-      padding: 1em;
+      padding: .5em;
       font-size: medium;
       border: none;
       border-radius: 1em;
       outline: white;
+      background-color: darkgray;
+      color: black;
+      font-weight: 600;
   }

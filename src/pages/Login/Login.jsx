@@ -77,11 +77,6 @@ export const Login = () => {
     // sessionStorage.setItem("decoded", JSON.stringify(decoded))
     // let d = JSON.parse(sessionStorage.getItem("decoded"))
 
-    // setUsefullDataToken({
-    //   tokenData: decodeToken(fetched.token),
-    //   token: fetched.token,
-    // })
-
     //Home redirected
     navigate("/profile")
   }

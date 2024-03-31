@@ -36,3 +36,16 @@ export const valide = (type, value) => {
       console.log("whattttttttttt???")
   }
 }
+export const formatDate = (inputDate) => {
+  // const inputDate = "2024-05-01T17:00:00.000Z";
+  const dateObject = new Date(inputDate)
+
+  const year = dateObject.getFullYear()
+  const month = String(dateObject.getMonth() + 1).padStart(2, "0")
+  const day = String(dateObject.getDate()).padStart(2, "0")
+  const hours = String(dateObject.getHours()).padStart(2, "0")
+  const minutes = String(dateObject.getMinutes()).padStart(2, "0")
+
+  const outputDate = `${year}-${month}-${day}T${hours}:${minutes}`
+  return outputDate
+}

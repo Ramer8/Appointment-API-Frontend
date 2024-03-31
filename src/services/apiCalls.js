@@ -46,9 +46,6 @@ export const registerMe = async (credenciales) => {
 
   try {
     const response = await fetch(
-      //   `http://localhost:4500/api/auth/register`,
-      //   options
-      // )
       `${import.meta.env.VITE_API_URL}/auth/register`,
       options
     )
@@ -75,14 +72,9 @@ export const fetchMyProfile = async (token) => {
   }
   try {
     const response = await fetch(
-      //   "http://localhost:4500/api/users/profile",
-      //   options
-      // )
       `${import.meta.env.VITE_API_URL}/users/profile`,
       options
     )
-    // `${import.meta.env.VITE_API_URL}users/profile`,
-
     const data = await response.json()
     if (!data.success) {
       throw new Error(data.message)
@@ -170,7 +162,7 @@ export const getMyAppointments = async (token) => {
 
 export const createAppointment = async (data, token) => {
   const options = {
-    method: "PUT",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -224,8 +216,6 @@ export const deleteAppointment = async (id, token) => {
 }
 
 export const updateMyAppointment = async (data, token) => {
-  console.log(data)
-  console.log(token)
   const options = {
     method: "PUT",
     headers: {

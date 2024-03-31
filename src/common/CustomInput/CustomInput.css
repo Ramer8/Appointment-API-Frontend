@@ -1,16 +1,20 @@
 .inputDesign {
 
-    display: block;
-    border-radius: 2em;
-    padding: .5rem 2rem;
-    height: 2.5em;
     width: 15em;
     margin: 1em;
+
+    padding: .5rem 2rem;
+    height: 2.5em;
+    border-radius: 2em;
+
     /* box-shadow: 1px 1px 5px darkgray; */
-    box-shadow: 1.5px 1.5px 5px 0px fuchsia;
-    background: none;
+    display: block;
     border: none;
+    box-shadow: 1.5px 1.5px 5px 0px fuchsia;
+
+    background: none;
     color: whitesmoke;
+
     text-decoration: none;
     font-size: 1em;
     outline: white;
@@ -26,4 +30,24 @@
     opacity: 0.5;
     box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.737);
     color: whitesmoke;
+}
+
+
+.inputDate {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    width: 18em;
+    box-shadow: none;
+    background-color: gray;
+    color: black;
+}
+
+.inputDate:hover {
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+::-webkit-calendar-picker-indicator {
+    cursor: pointer;
 }
