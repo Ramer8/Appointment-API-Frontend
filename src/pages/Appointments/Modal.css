@@ -36,13 +36,6 @@
       flex-direction: column;
   }
 
-  .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-  }
-
   .selectAppointment {
       margin: .5em;
       padding: .5em;
@@ -53,4 +46,19 @@
       background-color: darkgray;
       color: black;
       font-weight: 600;
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+  }
+
+  .dateInput {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
   }

@@ -8,7 +8,7 @@ const Managment = () => {
   const [users, setUsers] = useState()
   const [usersToDelete, setUsersToDelete] = useState({})
   const [tokenStorage, setTokenStorage] = useState(
-    JSON.parse(localStorage.getItem("decoded")).token
+    JSON.parse(localStorage.getItem("decoded"))?.token
   )
   const [checkButton, setCheckButton] = useState(false)
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ const Managment = () => {
     const fetching = async () => {
       try {
         const fetched = await fetchAllUsers(tokenStorage)
-        console.log(fetched.data)
+
         if (!fetched?.success) {
           //  setMsgError(fetched.message)
           if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED") {
@@ -69,6 +69,7 @@ const Managment = () => {
       const fetched = await deleteMoreThanOneUsers(usersToRemove, tokenStorage)
       console.log(fetched)
       if (!fetched?.success) {
+        console.log(fetched.message)
         //  setMsgError(fetched.message)
         if (!tokenStorage === undefined) {
           throw new Error("Failed to fetch Appointment data")

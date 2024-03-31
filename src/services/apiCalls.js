@@ -22,7 +22,6 @@ export const loginMe = async (credenciales) => {
     // )
 
     const data = await response.json()
-    console.log("DATA FROM LOGIN", data)
 
     if (!data.success) {
       throw new Error(data.message)
@@ -53,7 +52,6 @@ export const registerMe = async (credenciales) => {
     const data = await response.json()
     console.log(data)
     if (!data.success) {
-      console.log(data.message)
       throw new Error(data.message)
     }
 
@@ -204,7 +202,6 @@ export const deleteAppointment = async (id, token) => {
     )
 
     const data = await response.json()
-    console.log("appointment deleted is", data)
     if (!data.success) {
       throw new Error(data.message)
     }

@@ -11,10 +11,17 @@
     align-items: center;
     flex-direction: column;
     font-size: medium;
-    color: whitesmoke
+    color: darkgray
 }
 
-.title {
+.titleList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.titleContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,13 +30,14 @@
 
 .option {
     color: fuchsia;
+    background-color: red;
 }
 
 .appointmentList {
     border: 1px solid #ffffff40;
     padding: 1em 2em;
     margin-bottom: 1em;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 .appointmentBox {
@@ -43,6 +51,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.addAppointment {
+    background-color: transparent;
+    border: none;
+    display: flex
 }
 
 .errorDate {
@@ -62,4 +76,16 @@
     font-size: 1em;
     font-weight: 500;
     box-shadow: 1.5px 1.5px 5px 0px red;
+}
+
+@media (prefers-color-scheme: light) {
+    .appointmentDesign {
+        color: black;
+        border: 2px solid lightgray
+    }
+
+    .appointmentList {
+        border: 2px solid lightgray
+    }
+
 }

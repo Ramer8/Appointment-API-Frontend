@@ -23,12 +23,19 @@
 
 }
 
+.content {}
+
 @media (prefers-color-scheme: light) {
     .navigateDesign {
         color: black;
     }
 
     .menuHighlighted {
-        color: deeppink;
+        color: darkmagenta;
+    }
+
+    .content {
+        color: black;
+        background-color: whitesmoke;
     }
 }

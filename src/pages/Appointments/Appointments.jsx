@@ -69,11 +69,6 @@ const Appointments = () => {
         }
         // setLoadedData(true)
         setServices(fetched.data)
-        // setServices({
-        //   serviceName: fetched.data.serviceName,
-        //   description: fetched.data.description,
-        //   id: fetched.data.id,
-        // })
       } catch (error) {
         console.error(error)
       }
@@ -140,7 +135,7 @@ const Appointments = () => {
       {appointments && (
         <div className="appointmentDesign">
           <div className="appointmentContainer">
-            <div className="title">
+            <div className="titleContainer">
               <h2> Tattoo Appointment</h2>
               <CustomButton
                 className={"addAppointment"}
@@ -173,8 +168,17 @@ const Appointments = () => {
                     </option>
                   ))}
                 </select>
-                <button type="submit" className="retrieveAppointment">
-                  Create
+                <button type="submit" className="addAppointment">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    className="bi bi-plus-circle-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                  </svg>
                 </button>
                 <div className="dateAndError">
                   <CustomInput
@@ -198,9 +202,9 @@ const Appointments = () => {
             )}
 
             <div className="appointmentList">
-              <div className="title">
+              <div className="titleList">
                 <h2>Appointment list</h2>
-                <CustomButton
+                {/* <CustomButton
                   className={"addAppointment"}
                   title={
                     <svg
@@ -215,7 +219,7 @@ const Appointments = () => {
                     </svg>
                   }
                   functionEmit={() => setToggleFormDelete(!toggleFormDelete)}
-                />
+                /> */}
               </div>
               {/* {toggleFormDelete && (
                 <form method="post" onSubmit={handleSubmit}>
@@ -251,7 +255,6 @@ const Appointments = () => {
                   <div>
                     {new Date(myAppointment.appointmentDate).toLocaleString()}
                   </div>
-
                   <AppointmentModal
                     myAppointment={myAppointment}
                     tokenStorage={tokenStorage}
