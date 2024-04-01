@@ -1,5 +1,5 @@
 .homeDesign {
-    /* height: 88vh; */
+    height: 88vh;
     height: auto;
     width: 100vw;
 
@@ -12,17 +12,30 @@
     /* color: whitesmoke */
 }
 
-.footer {
+.homeTitle {
+    padding-top: 1em;
+    font-size: 1.5em;
+    background-color: transparent;
+
+
+}
+
+.footerHome {
     height: auto;
     padding: 1em;
     width: 100%;
     font-size: .9em;
     margin: 0em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1.5em;
 }
 
 .socialIcons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
+    margin-bottom: 1em;
     gap: 3em;
 }

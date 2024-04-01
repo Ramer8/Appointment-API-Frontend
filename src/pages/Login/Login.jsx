@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { decodeToken } from "react-jwt"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
-
 import "./Login.css"
 import { loginMe } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { valide } from "../../utils/functions"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
 // import { CustomButton } from "../../common/CustomButton/CustomButton"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 export const Login = () => {
   const [msgError, setMsgError] = useState("")
@@ -21,7 +22,6 @@ export const Login = () => {
     emailError: "",
     passwordBodyError: "",
   })
-
   const ERROR_MSG_TIME = 9000
 
   const navigate = useNavigate()
@@ -50,6 +50,7 @@ export const Login = () => {
     for (let element in credenciales) {
       if (credenciales[element] === "") {
         setMsgError("All fields are required")
+        toast.warn("All fields are required", { theme: "dark" })
         return
       }
     }
@@ -87,6 +88,7 @@ export const Login = () => {
 
   return (
     <div>
+      <div></div>
       <div className="loginDesign">
         {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
 
@@ -130,6 +132,7 @@ export const Login = () => {
             <div className="error">{credencialesError.passwordBodyError}</div>
           )}
           {msgError && <div className="error">{msgError}</div>}
+          <ToastContainer />
         </div>
       </div>
     </div>

@@ -7,12 +7,12 @@
 
     padding: .5rem 2rem;
     height: 2.5em;
-    border-radius: 2em;
+    border-radius: 1em;
 
-    /* box-shadow: 1px 1px 5px darkgray; */
+    box-shadow: 1px 1px 5px darkgray;
     display: block;
     border: none;
-    box-shadow: 1.5px 1.5px 5px 0px fuchsia;
+    box-shadow: 1.5px 1.5px 5px 0px gray;
 
     background: none;
     color: whitesmoke;
@@ -31,6 +31,7 @@
     cursor: not-allowed;
     opacity: 0.5;
     box-shadow: 1.5px 1.5px 5px 0px rgba(255, 0, 238, 0.737);
+    box-shadow: 1.5px 1.5px 5px 0px grey;
     color: whitesmoke;
 }
 
@@ -57,4 +58,11 @@
 
 ::-webkit-calendar-picker-indicator {
     cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+    .inputDesign {
+        color: black
+    }
+
 }

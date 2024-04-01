@@ -2,6 +2,8 @@ import { useState } from "react"
 import Modal from "react-modal"
 import "./Modal.css"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
+import { ToastContainer, toast } from "react-toastify"
+
 import {
   deleteAppointment,
   getMyAppointments,
@@ -53,9 +55,14 @@ const AppointmentModal = ({
       //   setTimeout(() => {
       //     setMsgSuccess("")
       //   }, SUCCESS_MSG_TIME)
-      closeModal()
-      fetching()
-      setAppointmentChanged(!appointmentChanged)
+      if (fetched?.success) {
+        toast.success(fetched.message, { theme: "dark" })
+      }
+      setTimeout(() => {
+        closeModal()
+        fetching()
+        setAppointmentChanged(!appointmentChanged) // to update appointment list
+      }, 3000)
     } catch (error) {
       console.log(error)
     }
@@ -63,28 +70,26 @@ const AppointmentModal = ({
   const deleteMyAppointment = async (id) => {
     try {
       const fetched = await deleteAppointment(id, tokenStorage)
-      //   console.log(fetched)
+      console.log(fetched)
       if (!fetched?.success) {
-        //  setMsgError(fetched.message)
         if (!tokenStorage === undefined) {
           throw new Error("Failed to fetch Appointment data")
         }
       }
-      closeModal()
-      fetching()
-      setAppointmentChanged(!appointmentChanged) // to update appointment list
+      if (fetched?.success) {
+        toast.warn(fetched.message, { theme: "dark" })
+      }
+      setTimeout(() => {
+        closeModal()
+        fetching()
+        setAppointmentChanged(!appointmentChanged) // to update appointment list
+      }, 3000)
     } catch (error) {
       console.log(error)
     }
   }
   const inputHandler = (e) => {
     console.log(myAppointment.id)
-
-    //   setServiceToUpdate((prevState) => ({
-    //     ...prevState,
-    //     appointment_id: myAppointment.id,
-    //     appointmentDate: myAppointment.appointmentDate,
-    //   }))
 
     setServiceToUpdate((prevState) => ({
       ...prevState,
@@ -196,6 +201,7 @@ const AppointmentModal = ({
             functionEmit={() => deleteMyAppointment(myAppointment.id)}
           />
         </div>
+        <ToastContainer />
       </Modal>
     </div>
   )
