@@ -1,18 +1,41 @@
 .headerDesign {
-    height: 9vh;
+    height: 8vh;
     width: 100vw;
-
-    /* background-color: cadetblue; */
-
-    border: solid 1px grey;
     border-radius: 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
+    box-shadow: 1px 1px 5px 1px rgba(255, 0, 238, 0.341);
+    box-shadow: 1px 1px 5px 1px gray;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
+}
+
+.menuHighlighted {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    color: deeppink;
+    font-weight: bolder;
+
+}
+
+
+@media (prefers-color-scheme: light) {
+    .navigateDesign {
+        color: black;
+    }
+
+    .menuHighlighted {
+        color: darkmagenta;
+    }
+
+    .content {
+        color: black;
+        background-color: whitesmoke;
+    }
 }

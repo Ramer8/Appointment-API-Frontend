@@ -5,26 +5,22 @@ import { CustomInput } from "../../common/CustomInput/CustomInput"
 import "./Login.css"
 import { loginMe } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
+import { valide } from "../../utils/functions"
+import { CustomButton } from "../../common/CustomButton/CustomButton"
+// import { CustomButton } from "../../common/CustomButton/CustomButton"
 
-export const Login = ({
-  msgError,
-  setMsgError,
-  credential,
-  setCredential,
-  usefullDataToken,
-  setUsefullDataToken,
-}) => {
-  // const [msgError, setMsgError] = useState("")
+export const Login = () => {
+  const [msgError, setMsgError] = useState("")
 
   const [credenciales, setCredenciales] = useState({
     email: "",
     passwordBody: "",
   })
 
-  // const [credencialesError, setCredencialesError] = useState({
-  //   emailError: "",
-  //   passwordError: "",
-  // })
+  const [credencialesError, setCredencialesError] = useState({
+    emailError: "",
+    passwordBodyError: "",
+  })
 
   const ERROR_MSG_TIME = 9000
 
@@ -34,23 +30,16 @@ export const Login = ({
     setMsgError("")
   }, ERROR_MSG_TIME)
 
-  //  const checkError = (e) => {
-  //    const error = validame(e.target.name, e.target.value)
+  const checkError = (e) => {
+    const error = valide(e.target.name, e.target.value)
 
-  //    setUserError((prevState) => ({
-  //      ...prevState,
-  //      [e.target.name + "Error"]: error,
-  //      //el truco del almendruco nos dice que seria... nameError: error, o emailError: error
-  //    }))
-  //  }
+    setCredencialesError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: error,
+    }))
+  }
 
-  // if (credential) {
-  //   credenciales.email = credential.email
-  //   credenciales.password = credential.password
-  // }
-  // const { name, ...newcredential } = credential
   const inputHandler = (e) => {
-    console.log(credenciales)
     setCredenciales((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -58,68 +47,91 @@ export const Login = ({
   }
 
   const logMe = async () => {
-    for (let credencial in credenciales) {
-      if (credenciales[credencial] === "") {
-        setMsgError("No has rellenado todos los campos")
+    for (let element in credenciales) {
+      if (credenciales[element] === "") {
+        setMsgError("All fields are required")
         return
       }
     }
 
     const fetched = await loginMe(credenciales)
-
-    if (fetched.success) {
-      setCredential("")
-    }
-
     if (!fetched.success) {
       setMsgError(fetched.message)
 
       return
     }
-    const decodificado = decodeToken(fetched.token)
-    console.log(decodificado)
 
-    //ahora si funciona esta forma de guardar en localstorage
-    localStorage.setItem("decodificado", JSON.stringify(decodificado))
-    let a = JSON.parse(localStorage.getItem("decodificado"))
-
-    console.log(a)
-
-    sessionStorage.setItem("token", fetched)
-    sessionStorage.setItem("user", JSON.stringify(decodificado))
-
-    setUsefullDataToken({
+    const decoded = {
       tokenData: decodeToken(fetched.token),
       token: fetched.token,
-    })
+    }
+
+    //ahora si funciona esta forma de guardar en localStorage
+    localStorage.setItem("decoded", JSON.stringify(decoded))
+
+    // let a = JSON.parse(localStorage.getItem("decoded"))
+    // console.log(a)
+
+    //ahora si funciona esta forma de guardar en sessionStorage
+    // sessionStorage.setItem("decoded", JSON.stringify(decoded))
+    // let d = JSON.parse(sessionStorage.getItem("decoded"))
+
+    if (fetched.data.role.title === "super_admin") {
+      navigate("/managment")
+      return
+    }
 
     //Home redirected
-    navigate("/")
+    navigate("/home")
   }
 
   return (
-    <div className="loginDesign">
-      <pre>{JSON.stringify(credenciales, null, 2)}</pre>
-      <CustomInput
-        design="inputDesign"
-        type="email"
-        name="email"
-        value={credenciales.email || ""}
-        placeholder="email"
-        functionChange={inputHandler}
-      />
-      <CustomInput
-        design="inputDesign"
-        type="password"
-        name="passwordBody"
-        value={credenciales.passwordBody || ""}
-        placeholder="password"
-        functionChange={inputHandler}
-      />
-      <div className="loginButton" onClick={logMe}>
-        Log me!
+    <div>
+      <div className="loginDesign">
+        {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
+
+        <CustomInput
+          className={`inputDesign ${
+            credencialesError.emailError !== "" ? "inputDesignError" : ""
+          }`}
+          type="email"
+          name="email"
+          disabled={""}
+          value={credenciales.email || ""}
+          placeholder="email"
+          functionChange={inputHandler}
+          onBlurFunction={(e) => checkError(e)}
+        />
+
+        <CustomInput
+          className={`inputDesign ${
+            credencialesError.passwordBodyError !== "" ? "inputDesignError" : ""
+          }`}
+          type="password"
+          name="passwordBody"
+          disabled={""}
+          value={credenciales.passwordBody || ""}
+          placeholder="password"
+          functionChange={inputHandler}
+          onBlurFunction={(e) => checkError(e)}
+        />
+
+        <CustomButton
+          className={"loginButton"}
+          title={"Login"}
+          functionEmit={logMe}
+        />
+
+        <div className="footer">
+          {credencialesError.emailError && (
+            <div className="error">{credencialesError.emailError}</div>
+          )}
+          {credencialesError.passwordBodyError && (
+            <div className="error">{credencialesError.passwordBodyError}</div>
+          )}
+          {msgError && <div className="error">{msgError}</div>}
+        </div>
       </div>
-      {msgError && <div className="error">{msgError}</div>}
     </div>
   )
 }
