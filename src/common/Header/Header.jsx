@@ -1,32 +1,36 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { CustomLink } from "../CustomLink/CustomLink"
 import "./Header.css"
-import { useState } from "react"
 export const Header = () => {
-  const [decoder, setDecoder] = useState(
-    JSON.parse(localStorage.getItem("decoded"))
-  )
   const location = useLocation()
   const navigate = useNavigate()
-  const decoded = JSON.parse(localStorage.getItem("decoded"))
+  let decoded = JSON.parse(localStorage.getItem("decoded"))
+
   const logOut = () => {
     localStorage.removeItem("decoded")
+    decoded = ""
     navigate("/login")
   }
+
   return (
     <>
       <div className="headerDesign">
-        {decoded && decoder?.tokenData.roleName === "super_admin" && (
-          <div>
-            <CustomLink
-              title="Managment"
-              destination="/managment"
-              className={`${
-                location.pathname === "/managment" ? "menuHighlighted" : "menu"
-              }`}
-            />
-          </div>
-        )}
+        {decoded
+          ? decoded.tokenData.roleName === "super_admin" && (
+              <div>
+                <CustomLink
+                  title="Managment"
+                  destination="/managment"
+                  className={`${
+                    location.pathname === "/managment"
+                      ? "menuHighlighted"
+                      : "menu"
+                  }`}
+                />
+              </div>
+            )
+          : ""}
+
         <CustomLink
           title={`${
             location.pathname === "/"
