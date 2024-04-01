@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap');
+
+.appointmentDesign {
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200px;
+    font-style: normal;
+    font-variation-settings: none;
+    margin-inline: 0em;
+    margin-top: 0em;
+    /* height: 88vh;
+    width: 100vw; */
+    padding-inline: 2em;
+    border-radius: .5em;
+    /* border: 1px solid #ffffff40; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: medium;
+    color: darkgray;
+
+    /* color: black;
+    background-color: darkolivegreen; */
+}
+
+.appointmentContainer {
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #ffffff40;
+    padding-inline: .5em;
+    border-radius: .5em;
+    gap: .5em;
+}
+
+.titleContainer {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-inline: 1em;
+    padding-top: .5em;
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.appointmentNewBox {
+    border-radius: .5em;
+    padding: .5em;
+    border: 1px solid #ffffff40;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.formAppointmentNew {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.rowAppointmentNew {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.selectAppointmentList {
+    margin: .5em;
+    padding: .5em;
+    border: none;
+    border-radius: 1em;
+    outline: white;
+    background-color: darkgray;
+    width: 70%;
+    color: black;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.addAppointment {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: .2em;
+    margin-top: .6em;
+}
+
+.date {
+    color: dimgray;
+}
+
+.dateAndError {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointmentList {
+    border: 1px solid #ffffff40;
+    padding: 1em 1em;
+    margin-bottom: .5em;
+    border-radius: .5em;
+}
+
+.appointmentBox {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.titleList {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rowBox {
+    /* background-color: red; */
+    padding-inline: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: .5em;
+    margin-top: .5em;
+    border: 2px solid #ffffff40;
+}
+
+.leftSideBox {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.avatarService {
+    font-size: 2em;
+    padding-right: .3em;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.serviceName {
+    font-weight: 600;
+}
+
+
+
+.rigthSideBox {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.errorDate {
+
+    border-radius: 2em;
+    padding: .5rem 2rem;
+
+    background-color: red;
+    color: white;
+
+    font-size: 1em;
+    font-weight: 400;
+}
+
+@media (prefers-color-scheme: light) {
+    .appointmentDesign {
+        color: black;
+        border: 2px solid lightgray
+    }
+
+    .appointmentList {
+        border: 2px solid lightgray;
+        color: black
+    }
+
+    .rowBox {
+        border: 1px solid lightgray
+    }
+
+}
+
+@media (min-width: 300px) {
+    .appointmentDesign {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .appointmentContainer {
+        width: 100%;
+    }
+
+    .dateAndError {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 500px) {
+    .appointmentDesign {
+        width: 80%;
+        /* display: flex; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .appointmentContainer {
+        width: 90%;
+        padding: 1em;
+    }
+
+    .dateAndError {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+}
+
+@media (min-width: 800px) {
+    .appointmentDesign {
+        width: 50%;
+        /* display: flex; */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .appointmentContainer {
+        width: 100%;
+        padding: 1em;
+    }
+
+}

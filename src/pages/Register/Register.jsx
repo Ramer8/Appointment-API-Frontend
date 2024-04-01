@@ -3,14 +3,12 @@ import "./Register.css"
 import { registerMe } from "../../services/apiCalls"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
 import { useNavigate } from "react-router-dom"
+import { CustomButton } from "../../common/CustomButton/CustomButton"
 // import Spinner from "../../common/Spinner/Spinner"
-export const Register = ({
-  msgError,
-  setMsgError,
-  credential,
-  setCredential,
-}) => {
-  const [loadingFlag, setLoadingFlag] = useState(false)
+export const Register = () => {
+  const [msgError, setMsgError] = useState("")
+
+  const [loadingFlag] = useState(false)
   const [credenciales, setCredenciales] = useState({
     firstName: "",
     lastName: "",
@@ -52,7 +50,7 @@ export const Register = ({
       setMsgError(fetched.message)
       return
     }
-    setCredential(credenciales)
+    //  setCredential(credenciales)
     //Login redirected
     navigate("/login")
   }
@@ -63,7 +61,7 @@ export const Register = ({
           {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
 
           <CustomInput
-            design="inputDesign"
+            className="inputDesign"
             type="text"
             name="firstName"
             value={credenciales.firstName || ""}
@@ -71,7 +69,7 @@ export const Register = ({
             functionChange={inputHandler}
           />
           <CustomInput
-            design="inputDesign"
+            className="inputDesign"
             type="text"
             name="lastName"
             value={credenciales.lastName || ""}
@@ -79,7 +77,7 @@ export const Register = ({
             functionChange={inputHandler}
           />
           <CustomInput
-            design="inputDesign"
+            className="inputDesign"
             type="email"
             name="email"
             value={credenciales.email || ""}
@@ -87,7 +85,7 @@ export const Register = ({
             functionChange={inputHandler}
           />
           <CustomInput
-            design="inputDesign"
+            className="inputDesign"
             type="password"
             name="password"
             value={credenciales.password || ""}
@@ -99,9 +97,13 @@ export const Register = ({
         // <Spinner />
         ""
       )}
+      <CustomButton
+        className={"loginButton"}
+        title={"Register"}
+        functionEmit={regMe}
+      />
 
-      <div
-        className="registerButton"
+      {/* <div className="registerButton"
         onClick={
           regMe
           //   ,
@@ -110,8 +112,9 @@ export const Register = ({
           // }
         }
       >
+
         {loadingFlag ? "Register succesfully" : "Register me!"}
-      </div>
+      </div> */}
       {msgError && <div className="error">{msgError}</div>}
     </div>
   )

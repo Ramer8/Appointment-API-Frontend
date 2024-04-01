@@ -1,0 +1,32 @@
+.serviceDesign {
+    /* height: 84vh;
+    width: 100vw; */
+    /* height: 58vh; */
+    width: 100%;
+    /* background-color: blueviolet; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+ul {
+    width: 200px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 0px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: flex;
+    padding: 8px 0px;
+    list-style: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
