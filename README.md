@@ -1,18 +1,28 @@
-### Appointment API Frontend
+### Appointment API Frontend Website React
 
 ---
 
-<h4> Tattoo Shop </h4>
+<h4> Tattoo Shop App </h4>
 
 ---
 
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;">
 <img src="./public/img/mobile.gif"/>
-<img src="./public/1.jpeg"/>
-
+</div>
 ---
 
-[![GITHUB]][github-url][![DOCKER]][docker-url][![MYSQL]][MYSQL-url]
+[![GITHUB]][github-url][![DOCKER]][docker-url][![MYSQL]][MYSQL-url]![REACT]![JAVASCRIPT]<a href="https://developer.mozilla.org/es/docs/Web/CSS"><img src= "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>[![JWT]][JWT-url]
 
+[JWT]: https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens
+[JWT-url]: https://jwt.io/
+
+</a>
+
+[JAVASCRIPT]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[REACT]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [MYSQL]: https://img.shields.io/badge/mysql-3E6E93?style=for-the-badge&logo=mysql&logoColor=white
 [MYSQL-url]: https://www.mysql.com/
 [GITHUB]: https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=white
@@ -38,13 +48,18 @@ Is a SPA (single-page application) with react router dom to organize the routes.
 The frontend is connected to MySQL data base created in Appointment API Backend.
 The data showed or the new users create are created in MySQL data base.
 
-#### Routes
+#### Views
 
 ---
 
+#### Mobil device 📱
+
 ##### Register page
 
-<img src="./public/img/iPhone-13-PRO-register.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-register.png" width="50%"/></div>
 
 `http://localhost:5173/register`
 
@@ -52,7 +67,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Login page
 
-<img src="./public/img/iPhone-13-PRO-login.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"> <img src="./public/img/iPhone-13-PRO-login.png" width="50%"/></div>
 
 `http://localhost:5173/login`
 
@@ -60,7 +78,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Home page
 
-<img src="./public/img/iPhone-13-PRO-homepage.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-homepage.png" width="50%"/></div>
 
 `http://localhost:5173`
 
@@ -68,7 +89,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Editable User profile
 
-<img src="./public/img/iPhone-13-PRO-Editableprofile.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-Editableprofile.png" width="50%"/></div>
 
 `http://localhost:5173/profile`
 
@@ -76,7 +100,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### User Appointment List
 
-<img src="./public/img/iPhone-13-PRO-AppointmentList.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-AppointmentList.png" width="50%"/></div>
 
 `http://localhost:5173/home`
 
@@ -84,7 +111,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### New Appointment users
 
-<img src="./public/img/iPhone-13-PRO-NewAppointment.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-NewAppointment.png" width="50%"/></div>
 
 `http://localhost:5173/home`
 
@@ -92,7 +122,10 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Delete Appointment users
 
-<img src="./public/img/iPhone-13-PRO-deleteAppointment.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;"><img src="./public/img/iPhone-13-PRO-deleteAppointment.png" width="50%"/></div>
 
 `http://localhost:5173/home`
 
@@ -100,7 +133,77 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Services
 
-<img src="./public/img/iPhone-13-PRO-Services.png"/>
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;">
+<img src="./public/img/iPhone-13-PRO-Services.png" width="50%"/></div>
+
+`http://localhost:5173/home`
+
+---
+
+#### Computer Device
+
+##### Register page
+
+<img src="./public/img/register.png" width="90%"/>
+
+`http://localhost:5173/register`
+
+---
+
+#### Login page
+
+<img src="./public/img/login.png" width="90%"/>
+
+`http://localhost:5173/login`
+
+---
+
+#### Home page
+
+<img src="./public/img/home.png" width="90%"/>
+
+`http://localhost:5173`
+
+---
+
+#### Editable User profile
+
+<img src="./public/img/editProfile.png" width="90%"/>
+
+`http://localhost:5173/profile`
+
+---
+
+#### User Appointment List
+
+<img src="./public/img/appointmentList.png" width="90%"/>
+
+`http://localhost:5173/home`
+
+---
+
+#### New Appointment users
+
+<img src="./public/img/createAppointment.png" width="90%"/>
+
+`http://localhost:5173/home`
+
+---
+
+#### Delete Appointment users
+
+<img src="./public/img/deleteAppointment.png" width="90%"/>
+
+`http://localhost:5173/home`
+
+---
+
+#### Services
+
+<img src="./public/img/home.png" width="90%"/>
 
 `http://localhost:5173/home`
 
@@ -108,17 +211,57 @@ The data showed or the new users create are created in MySQL data base.
 
 #### Super Admin credentials can recover users and delete it.
 
-<img src="./public/img/iPhone-13-PRO-SuperAdminUsers.png"/>
-<img src="./public/img/iPhone-13-PRO-deleteUser.png"/>
-
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;">
+<img src="./public/img/iPhone-13-PRO-SuperAdminUsers.png" width="50%"/>
+<img src="./public/img/iPhone-13-PRO-deleteUser.png" width="50%"/>
+</div>
 `http://localhost:5173/managment`
 
 ---
 
-### Next steps
+#### Dark 🌘 and Light ☀️ Mode
+
+<div style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;">
+<img src="./public/img/iPhone-13-PRO-darkmode.png" width="50%"/>
+<img src="./public/img/iPhone-13-PRO-ligthmode.png" width="50%"/>
+
+</div>
+
+---
+
+#### App Depyoyed ⚙️
+
+<ul>
+1. Clone Repo
+
+`npm install` 2. Launch the project in your local device:
+`npm run dev`
+
+Then in localhost:PORT, will be launched the application, and you will be on the landing page (Home)
+
+</ul>
+
+---
+
+### Next steps ⎘
 
 Continue build components, buttons and inputs to from respective end points created in the backend
 Add Redux to use a global state to binding data of components.
 Add frontend testing.
+Finishing CRUD for all entities
 
 ---
+
+## Contact
+
+<a href = "mailto:ramirolpoblete@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/ramiropoblete/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href = "https://github.com/Ramer8"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
+
+</p>
