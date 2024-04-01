@@ -237,15 +237,27 @@ The data showed or the new users create are created in MySQL data base.
 
 #### App Depyoyed ⚙️
 
-<ul>
-1. Clone Repo
+<ol>
 
-`npm install` 2. Launch the project in your local device:
+<li> Clone Repo
+
+`npm install`
+
+</li>
+
+<li>
+
+Launch the project in your local device:
+
 `npm run dev`
 
-Then in localhost:PORT, will be launched the application, and you will be on the landing page (Home)
+</li>
 
-</ul>
+</ol>
+
+<li>Then in localhost:PORT, will be launched the application, and you will be on the landing page (Home).
+
+</li>
 
 ---
 
