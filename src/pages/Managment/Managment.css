@@ -56,7 +56,6 @@
 
     display: table-cell;
     padding: 8px;
-    /* Optional: Add border bottom */
 }
 
 .header>div {
@@ -122,14 +121,6 @@
             }
         }
 
-        /* &+label {
-            font-size: 14px;
-            line-height: 21px;
-            display: inline-block;
-            vertical-align: top;
-            cursor: pointer;
-            margin-left: 4px;
-        } */
     }
 
     input[type='checkbox'] {
@@ -199,7 +190,6 @@
     }
 }
 
-/* // Demo */
 
 ul {
     margin: 12px;
@@ -236,9 +226,10 @@ body {
     align-items: center;
     /* background: #F6F8FF; */
 
-    @media(max-width: 800px) {
-        padding: 20px;
-    }
+}
+
+@media(max-width: 800px) {
+    padding: 20px;
 }
 
 @media (prefers-color-scheme: light) {
