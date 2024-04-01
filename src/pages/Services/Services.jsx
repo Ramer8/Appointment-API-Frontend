@@ -14,7 +14,6 @@ const Services = () => {
           //  setMsgError(fetched.message)
         }
         // setLoadedData(true)
-        console.log(fetched.data)
         setServices(fetched.data)
         // setServices({
         //   serviceName: fetched.data.serviceName,

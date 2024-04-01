@@ -9,7 +9,7 @@ const Card = ({ element }) => {
     borderRadius: "2em",
   }
 
-  console.log(`background-image: url(${element.image})`)
+  // console.log(`background-image: url(${element.image})`)
   return (
     <div style={styles}>
       <div>

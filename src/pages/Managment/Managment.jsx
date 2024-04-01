@@ -87,15 +87,16 @@ const Managment = () => {
   return (
     <div className="managmentDesign">
       <div className="userContainer">
-        User list
-        <hr />
         {!users?.length && "No users loaded"}
         {users && (
           <div className="table">
-            <div className="deleteBar">
-              {/* {arrayToDelete.length == !0 && `Selected ${arrayToDelete.length}`} */}
+            <div className="preHeader">
+              <div className="leftSide">
+                User list
+                {/* {arrayToDelete.length == !0 && `Selected ${arrayToDelete.length}`} */}
+              </div>
               <CustomButton
-                className={"addAppointment"}
+                className={"deleteUsers"}
                 title={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
