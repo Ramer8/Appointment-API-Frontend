@@ -10,6 +10,7 @@ import AppointmentModal from "./AppointmentModal"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
 import { CustomInput } from "../../common/CustomInput/CustomInput"
 import { formatDate } from "../../utils/functions"
+import { ToastContainer, toast } from "react-toastify"
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState()
@@ -84,12 +85,10 @@ const Appointments = () => {
   const createMyAppointment = async (data) => {
     try {
       const fetched = await createAppointment(data, tokenStorage)
-      console.log(fetched)
-      //   setMsgSuccess("Profile Udated")
 
-      //   setTimeout(() => {
-      //     setMsgSuccess("")
-      //   }, SUCCESS_MSG_TIME)
+      if (fetched?.success) {
+        toast.success(fetched.message, { theme: "dark" })
+      }
       setNewAppointment({ appointment_date: "", service_id: "" })
       setAppointmentChanged(!appointmentChanged) // to update appointment list
     } catch (error) {
@@ -254,6 +253,7 @@ const Appointments = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </>
   )
 }

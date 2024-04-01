@@ -24,16 +24,19 @@
     display: flex;
     border-bottom: 1px solid gray;
     padding-bottom: .5em;
+
 }
 
 .leftSide {
-    flex: 1
+    flex: 1;
+    font-size: 1.5em;
 }
 
 .deleteUsers {
+
     flex: none;
     margin-inline: 1em;
-    /* background-color: transparent; */
+    background-color: transparent;
     border: none;
     display: flex;
     justify-content: center;
@@ -42,9 +45,11 @@
 }
 
 .deleteUsers:hover {
-    color: fuchsia;
+    color: red;
     cursor: pointer;
 }
+
+
 
 .header,
 .row {
