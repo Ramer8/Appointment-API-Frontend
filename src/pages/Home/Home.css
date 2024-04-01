@@ -1,11 +1,28 @@
 .homeDesign {
-    height: 88vh;
+    /* height: 88vh; */
+    height: auto;
     width: 100vw;
 
     display: flex;
-    justify-content: center;
+    /* justify-content: space-around; */
     align-items: center;
     flex-direction: column;
     font-size: medium;
-    color: whitesmoke
+    gap: 2em;
+    /* color: whitesmoke */
+}
+
+.footer {
+    height: auto;
+    padding: 1em;
+    width: 100%;
+    font-size: .9em;
+    margin: 0em;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 3em;
 }

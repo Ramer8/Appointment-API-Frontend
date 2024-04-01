@@ -29,12 +29,7 @@ const Services = () => {
       fetchServices()
     }
   }, [])
-  // const styles = {
-  //   backgroundImage: `url(${element.image})`,
-  //   backgroundSize: "cover",
-  //   width: "100%",
-  //   height: "100vh",
-  // }
+
   return (
     <>
       {!services ? (
@@ -42,13 +37,13 @@ const Services = () => {
       ) : (
         <div className="serviceDesign">
           <div className="container">
-            <ul className="cards">
+            <div className="cards">
               {services?.map((element) => (
                 <li className="card" key={element.id}>
                   <Card element={element} />
                 </li>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       )}

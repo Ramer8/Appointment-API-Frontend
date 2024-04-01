@@ -1,6 +1,8 @@
 .serviceDesign {
-    height: 84vh;
-    width: 100vw;
+    /* height: 84vh;
+    width: 100vw; */
+    /* height: 58vh; */
+    width: 100%;
     /* background-color: blueviolet; */
 
     display: flex;
@@ -10,8 +12,12 @@
     margin-top: 2em;
 }
 
+ul {
+    width: 200px;
+}
+
 .container {
-    height: 84vh;
+    width: 100%;
     padding: 0 0px;
     margin: 0 auto;
 }
