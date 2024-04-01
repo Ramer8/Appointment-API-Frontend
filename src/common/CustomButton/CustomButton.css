@@ -85,7 +85,7 @@
 .icon:hover {
     cursor: pointer;
     color: black;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .deleteAppointment {
@@ -149,4 +149,17 @@
 .addAppointment:hover {
     cursor: pointer;
     color: deeppink;
+}
+
+@media (prefers-color-scheme: light) {
+    .icon {
+        color: black;
+        border: solid 1px black;
+    }
+
+    .icon:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+    }
 }

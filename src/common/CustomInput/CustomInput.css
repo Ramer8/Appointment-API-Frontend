@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap');
+
 .inputDesign {
 
     width: 15em;
@@ -34,8 +36,13 @@
 
 
 .inputDate {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    width: 18em;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200px;
+    font-style: normal;
+    font-variation-settings: none;
+
+    width: max-content;
     box-shadow: none;
     background-color: gray;
     color: black;
