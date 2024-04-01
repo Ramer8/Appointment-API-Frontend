@@ -12,17 +12,22 @@
     /* color: whitesmoke */
 }
 
-.footer {
+.footerHome {
     height: auto;
     padding: 1em;
     width: 100%;
     font-size: .9em;
     margin: 0em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1.5em;
 }
 
 .socialIcons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
+    margin-bottom: 1em;
     gap: 3em;
 }
