@@ -102,58 +102,65 @@ const Profile = ({ usefullDataToken }) => {
   return (
     <>
       <div className="profileDesign">
-        <h1>Profile Page</h1>
-        Hi! {user?.firstName}
+        <div className="title">Profile Page</div>
+
         {!loadedData ? (
           <div>CARGANDO</div>
         ) : (
-          <div>
-            <label htmlFor="firstName">First Name:</label>
-            <CustomInput
-              className={
-                `inputDesign ${
-                  userError.emailError !== "" ? "inputDesignError" : ""
-                }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
-              }
-              type={"text"}
-              placeholder={""}
-              name={"firstName"}
-              disabled={write}
-              value={user.firstName || ""}
-              functionChange={(e) => inputHandler(e)}
-              onBlurFunction={(e) => checkError(e)}
-            />
-            <label htmlFor="lastName">Last Name:</label>
-            <CustomInput
-              className={
-                `inputDesign ${
-                  userError.emailError !== "" ? "inputDesignError" : ""
-                }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
-              }
-              type={"text"}
-              placeholder={""}
-              name={"lastName"}
-              disabled={write}
-              value={user.lastName || ""}
-              functionChange={(e) => inputHandler(e)}
-              onBlurFunction={(e) => checkError(e)}
-            />
-            <label htmlFor="email">Email:</label>
-            <CustomInput
-              id="email"
-              className={
-                `inputDesign ${
-                  userError.emailError !== "" ? "inputDesignError" : ""
-                }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
-              }
-              type={"email"}
-              placeholder={""}
-              name={"email"}
-              disabled={write}
-              value={user.email || ""}
-              functionChange={(e) => inputHandler(e)}
-              onBlurFunction={(e) => checkError(e)}
-            />
+          <div className="boxProfile">
+            <div className="rowName">
+              <label>First:</label>
+              <CustomInput
+                className={
+                  `inputDesign ${
+                    userError.emailError !== "" ? "inputDesignError" : ""
+                  }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
+                }
+                type={"text"}
+                placeholder={""}
+                name={"firstName"}
+                disabled={write}
+                value={user.firstName || ""}
+                functionChange={(e) => inputHandler(e)}
+                onBlurFunction={(e) => checkError(e)}
+              />
+            </div>
+            <div className="rowLastName">
+              <label>Last:</label>
+              <CustomInput
+                className={
+                  `inputDesign ${
+                    userError.emailError !== "" ? "inputDesignError" : ""
+                  }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
+                }
+                type={"text"}
+                placeholder={""}
+                name={"lastName"}
+                disabled={write}
+                value={user.lastName || ""}
+                functionChange={(e) => inputHandler(e)}
+                onBlurFunction={(e) => checkError(e)}
+              />
+            </div>
+            <div className="rowEmail">
+              <label htmlFor="email">Email:</label>
+              <CustomInput
+                id="email"
+                className={
+                  `inputDesign inputEmail ${
+                    userError.emailError !== "" ? "inputDesignError" : ""
+                  }` && ` inputDesign ${write === "" ? "" : "inputBlock"}`
+                }
+                type={"email"}
+                placeholder={""}
+                name={"email"}
+                disabled={write}
+                value={user.email || ""}
+                functionChange={(e) => inputHandler(e)}
+                onBlurFunction={(e) => checkError(e)}
+              />
+            </div>
+
             <CustomButton
               className={
                 write === ""

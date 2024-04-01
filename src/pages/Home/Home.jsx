@@ -11,10 +11,11 @@ export const Home = () => {
   return (
     <>
       <div className="homeDesign">
+        <div className="homeTitle">Tattoo Shop</div>
         <Services />
         {tokenStorage && <Appointments />}
       </div>
-      <div className="footer">
+      <div className="footerHome">
         <div className="socialIcons">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +59,6 @@ export const Home = () => {
           </svg>
         </div>
         <div>Copyright 2024 Tattoo Shop Ltd. </div>
-        <div>
-          Trademarks and brands are the property of their respective owners.
-        </div>
       </div>
     </>
   )

@@ -8,6 +8,42 @@
     align-items: center;
 }
 
+.title {
+    font-size: 2em;
+
+}
+
+.boxProfile {
+    border-radius: .5em;
+    /* border: 1px solid gray; */
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rowName {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rowLastName {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rowEmail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .footer {
     height: 30vh;
     width: 100vw;

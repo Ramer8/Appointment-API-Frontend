@@ -2,14 +2,13 @@
     /* height: 84vh;
     width: 100vw; */
     /* height: 58vh; */
-    width: 100%;
+    width: 80%;
     /* background-color: blueviolet; */
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
 }
 
 ul {

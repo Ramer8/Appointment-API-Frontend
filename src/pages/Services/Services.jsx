@@ -14,7 +14,6 @@ const Services = () => {
           //  setMsgError(fetched.message)
         }
         // setLoadedData(true)
-        console.log(fetched.data)
         setServices(fetched.data)
         // setServices({
         //   serviceName: fetched.data.serviceName,
@@ -37,6 +36,7 @@ const Services = () => {
       ) : (
         <div className="serviceDesign">
           <div className="container">
+            Services
             <div className="cards">
               {services?.map((element) => (
                 <li className="card" key={element.id}>

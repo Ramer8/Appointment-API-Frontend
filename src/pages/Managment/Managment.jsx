@@ -3,6 +3,8 @@ import "./Managment.css"
 import { useNavigate } from "react-router-dom"
 import { deleteMoreThanOneUsers, fetchAllUsers } from "../../services/apiCalls"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
+import { ToastContainer, toast } from "react-toastify"
+
 const Managment = () => {
   const [loadedData, setLoadedData] = useState(false)
   const [users, setUsers] = useState()
@@ -19,9 +21,8 @@ const Managment = () => {
         const fetched = await fetchAllUsers(tokenStorage)
 
         if (!fetched?.success) {
-          //  setMsgError(fetched.message)
           if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED") {
-            console.log("token expired")
+            toast.warn(fetched.message, { theme: "dark" })
             setTokenStorage("")
             localStorage.removeItem("decoded")
             navigate("/login")
@@ -43,59 +44,61 @@ const Managment = () => {
   }, [loadedData])
   const handleCheck = (e, id) => {
     setCheckButton(!checkButton)
-    console.log(e.target.value)
-    console.log(id)
-    console.log(checkButton)
 
     const isInArray = arrayToDelete.includes(id)
     if (isInArray) {
       const index = arrayToDelete.indexOf(id)
       arrayToDelete.splice(index, 1)
-      console.log("clear user not delete")
     } else {
       arrayToDelete.push(id)
     }
     setCheckButton(false)
-    console.log(arrayToDelete)
 
     // setUsersToDelete({ usersId: arrayToDelete })
-    console.log(usersToDelete)
   }
 
   const deleteUsers = async () => {
     const usersToRemove = { usersId: arrayToDelete }
-    console.log(usersToRemove)
+    if (usersToRemove.length === 0) {
+      toast.warn("You must select at least one user to delete", {
+        theme: "dark",
+      })
+      return
+    }
     try {
       const fetched = await deleteMoreThanOneUsers(usersToRemove, tokenStorage)
-      console.log(fetched)
       if (!fetched?.success) {
-        console.log(fetched.message)
-        //  setMsgError(fetched.message)
+        toast.warn(fetched.message, { theme: "dark" })
+
         if (!tokenStorage === undefined) {
+          toast.warn("Failed to fetch Appointment data", { theme: "dark" })
           throw new Error("Failed to fetch Appointment data")
         }
+      }
+      if (fetched?.success) {
+        toast.success(fetched.message, { theme: "dark" })
       }
     } catch (error) {
       console.log(error)
     }
-    console.log(arrayToDelete)
+
     arrayToDelete = [""]
     setLoadedData(false)
-    // setUsersToDelete("")
   }
 
   return (
     <div className="managmentDesign">
       <div className="userContainer">
-        User list
-        <hr />
         {!users?.length && "No users loaded"}
         {users && (
           <div className="table">
-            <div className="deleteBar">
-              {/* {arrayToDelete.length == !0 && `Selected ${arrayToDelete.length}`} */}
+            <div className="preHeader">
+              <div className="leftSide">
+                User list
+                {/* {arrayToDelete.length == !0 && `Selected ${arrayToDelete.length}`} */}
+              </div>
               <CustomButton
-                className={"addAppointment"}
+                className={"deleteUsers"}
                 title={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -141,6 +144,7 @@ const Managment = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   )
 }
