@@ -6,9 +6,13 @@ import { loginMe } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { valide } from "../../utils/functions"
 import { CustomButton } from "../../common/CustomButton/CustomButton"
-// import { CustomButton } from "../../common/CustomButton/CustomButton"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+
+//Redux
+import { login } from "../../app/slices/userSlice"
+
+import { useDispatch } from "react-redux"
 
 export const Login = () => {
   const [msgError, setMsgError] = useState("")
@@ -25,6 +29,8 @@ export const Login = () => {
   const ERROR_MSG_TIME = 9000
 
   const navigate = useNavigate()
+
+  const dispatch = useDispatch()
 
   setTimeout(() => {
     setMsgError("")
@@ -61,11 +67,13 @@ export const Login = () => {
 
       return
     }
-
+    // console.log(fetched)
     const decoded = {
       tokenData: decodeToken(fetched.token),
       token: fetched.token,
     }
+
+    dispatch(login({ credentials: decoded }))
 
     //ahora si funciona esta forma de guardar en localStorage
     localStorage.setItem("decoded", JSON.stringify(decoded))

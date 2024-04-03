@@ -1,9 +1,23 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { CustomLink } from "../CustomLink/CustomLink"
 import "./Header.css"
+
+//RDX
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
+import { userData } from "../../app/slices/userSlice"
+
 export const Header = () => {
   const location = useLocation()
   const navigate = useNavigate()
+
+  const rdxUser = useSelector(userData)
+  // const dispatch = useDispatch()
+
+  useEffect(() => {
+    console.log(rdxUser, " credenciales pasaporte")
+  }, [rdxUser])
+
   let decoded = JSON.parse(localStorage.getItem("decoded"))
 
   const logOut = () => {
