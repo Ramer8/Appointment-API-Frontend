@@ -8,7 +8,7 @@ import { CustomInput } from "../../common/CustomInput/CustomInput"
 const Profile = ({ usefullDataToken }) => {
   const [write, setWrite] = useState("disabled")
   const [tokenStorage, setTokenStorage] = useState(
-    JSON.parse(localStorage.getItem("decoded")).token
+    JSON.parse(localStorage.getItem("decoded"))?.token
   )
   const [loadedData, setLoadedData] = useState(false)
   const [msgSuccess, setMsgSuccess] = useState("")
