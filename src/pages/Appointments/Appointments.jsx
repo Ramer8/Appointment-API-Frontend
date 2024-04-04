@@ -46,8 +46,7 @@ const Appointments = () => {
 
         if (!fetched?.success) {
           if (fetched.message === "JWT NOT VALID OR TOKEN MALFORMED")
-            console.log("token expired")
-          setTokenStorage("")
+            setTokenStorage("")
           localStorage.removeItem("decoded")
           navigate("/login")
 

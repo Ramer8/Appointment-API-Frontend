@@ -13,13 +13,7 @@ const Services = () => {
         if (!fetched?.success) {
           //  setMsgError(fetched.message)
         }
-        // setLoadedData(true)
         setServices(fetched.data)
-        // setServices({
-        //   serviceName: fetched.data.serviceName,
-        //   description: fetched.data.description,
-        //   id: fetched.data.id,
-        // })
       } catch (error) {
         console.error(error)
       }

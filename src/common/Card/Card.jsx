@@ -2,10 +2,10 @@ import "./Card.css"
 const Card = ({ element }) => {
   // background-image: url(images/back.jpg);
   const styles = {
-    backgroundImage: `url(${element.image})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),url(${element.image})`,
     backgroundSize: "cover",
-    width: "100%",
-    height: "70vh",
+    width: "75vw",
+    height: "95vh",
     borderRadius: "2em",
   }
 

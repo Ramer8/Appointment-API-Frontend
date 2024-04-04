@@ -2,7 +2,7 @@
     /* height: 84vh;
     width: 100vw; */
     /* height: 58vh; */
-    width: 80%;
+    width: 700%;
     /* background-color: blueviolet; */
 
     display: flex;
@@ -11,12 +11,7 @@
     align-items: center;
 }
 
-ul {
-    width: 200px;
-}
-
 .container {
-    width: 100%;
     padding: 0 0px;
     margin: 0 auto;
 }
@@ -24,8 +19,12 @@ ul {
 .cards {
     display: flex;
     padding: 8px 0px;
+
     list-style: none;
     overflow-x: scroll;
     overflow-y: hidden;
+    /* width: 54vh; */
+
+    /* width: auto; */
     scroll-snap-type: x mandatory;
 }
