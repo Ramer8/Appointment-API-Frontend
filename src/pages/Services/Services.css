@@ -3,28 +3,79 @@
     width: 100vw; */
     /* height: 58vh; */
     width: 700%;
-    /* background-color: blueviolet; */
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .container {
     padding: 0 0px;
     margin: 0 auto;
+    border-radius: 1em;
+}
+
+.titleContainerServices {
+    margin-left: 1em;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 .cards {
     display: flex;
     padding: 8px 0px;
-
     list-style: none;
     overflow-x: scroll;
     overflow-y: hidden;
-    /* width: 54vh; */
 
-    /* width: auto; */
     scroll-snap-type: x mandatory;
+}
+
+@media (max-width:300px) {
+    .cards {
+        width: 100%;
+        height: 90%;
+        margin: 0em;
+    }
+}
+
+@media (min-width: 700px) {
+    .serviceDesign {
+        width: 93%;
+
+    }
+}
+
+@media (min-width: 800px) {
+    .serviceDesign {
+        width: 93%;
+
+    }
+}
+
+@media (min-width: 1000px) {
+
+
+    .serviceDesign {
+        width: 100%;
+
+    }
+
+    .container {
+        width: 100%;
+        height: 90%;
+        margin: 0;
+    }
+
+    .cards {
+        width: 100%;
+        margin: 0em;
+    }
+
+    .container {
+        width: 100%;
+        margin-left: 1em;
+    }
 }

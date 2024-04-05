@@ -30,7 +30,7 @@ const Services = () => {
       ) : (
         <div className="serviceDesign">
           <div className="container">
-            Services
+            <div className="titleContainerServices">Services</div>
             <div className="cards">
               {services?.map((element) => (
                 <li className="card" key={element.id}>
