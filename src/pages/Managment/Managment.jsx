@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify"
 const Managment = () => {
   const [loadedData, setLoadedData] = useState(false)
   const [users, setUsers] = useState()
-  const [usersToDelete, setUsersToDelete] = useState({})
   const [tokenStorage, setTokenStorage] = useState(
     JSON.parse(localStorage.getItem("decoded"))?.token
   )

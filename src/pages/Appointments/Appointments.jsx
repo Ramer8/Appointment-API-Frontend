@@ -17,7 +17,6 @@ const Appointments = () => {
   const [services, setServices] = useState()
   const [appointmentChanged, setAppointmentChanged] = useState(false)
   const [toggleForm, setToggleForm] = useState(false)
-  const [toggleFormDelete, setToggleFormDelete] = useState(false)
 
   const [msgError, setMsgError] = useState("")
 
