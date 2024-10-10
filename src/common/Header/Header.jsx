@@ -3,7 +3,8 @@ import { CustomLink } from "../CustomLink/CustomLink"
 import "./Header.css"
 
 //RDX
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
+// import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { userData } from "../../app/slices/userSlice"
 
