@@ -1,5 +1,5 @@
 export const loginMe = async (credenciales) => {
-  // console.log(import.meta.env.VITE_API_URL)
+  console.log(import.meta.env.VITE_API_URL, "from redux repo")
   //    http://localhost:4500/api
 
   // `${import.meta.env.VITE_API_URL}users/profile`,
