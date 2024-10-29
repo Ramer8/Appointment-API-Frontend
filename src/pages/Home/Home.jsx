@@ -1,9 +1,11 @@
 import { useState } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
-import Services from "../Services/Services"
+// import Services from "../Services/Services"
+import Header from "../Header/Header"
 
 export const Home = () => {
+  // eslint-disable-next-line
   const [tokenStorage, setTokenStorage] = useState(
     JSON.parse(localStorage.getItem("decoded"))?.token
   )
@@ -11,8 +13,10 @@ export const Home = () => {
   return (
     <>
       <div className="homeDesign">
-        <div className="homeTitle">Tattoo Shop</div>
-        <Services />
+        {/* <div className="homeTitle">Tattoo Shop</div> */}
+        {/* <Services /> */}
+        <Header />
+
         {tokenStorage && <Appointments />}
       </div>
       <div className="footerHome">

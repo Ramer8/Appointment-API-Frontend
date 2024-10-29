@@ -36,6 +36,7 @@ const Appointments = () => {
     if (!tokenStorage) {
       navigate("/")
     }
+    // eslint-disable-next-line
   }, [tokenStorage])
 
   useEffect(() => {
@@ -75,6 +76,7 @@ const Appointments = () => {
     }
 
     fetchServices()
+    // eslint-disable-next-line
   }, [appointmentChanged])
 
   setTimeout(() => {
