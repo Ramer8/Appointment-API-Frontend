@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
 // import Services from "../Services/Services"
-import Header from "../Header/Header"
+import HeaderVideo from "../../components/Hero/HeaderVideo"
 
 export const Home = () => {
   // eslint-disable-next-line
@@ -15,7 +15,7 @@ export const Home = () => {
       <div className="homeDesign">
         {/* <div className="homeTitle">Tattoo Shop</div> */}
         {/* <Services /> */}
-        <Header />
+        <HeaderVideo />
 
         {tokenStorage && <Appointments />}
       </div>
