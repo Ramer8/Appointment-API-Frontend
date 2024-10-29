@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=New+Rocker&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.header-video {
+    font-family: "New Rocker", system-ui;
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    color: whitesmoke;
+    letter-spacing: -2.5px;
+    padding-top: -2em;
+    /* text-shadow: 1px 1px 12px black; */
+    /* color: black; */
+    /* text-shadow: 1px 1px 12px rgb(255, 255, 255); */
+    display: flex;
+    /* justify-content: right; */
+    /* align-items: end; */
+
+    transition: background 0.5s ease;
+}
+
+.background-video-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+/* background image filter  */
+
+.video-overlay-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(27, 40, 54, 0.9), rgba(0, 0, 0, 0), rgba(27, 40, 54, 0.99));
+    z-index: -1;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+    /* transition: background 0.3s ease; */
+    transition: all 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .video-overlay-header {
+        background: linear-gradient(rgba(27, 40, 54, 0.9), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.99));
+    }
+
+    .header-video {
+        color: black;
+    }
+}
+
+.scrolling .menu-button {
+    color: rgba(255, 255, 255, 0.03);
+    background-color: transparent;
+    transition: all .4s ease;
+}
+
+.scrolling .content-video-title {
+    color: transparent;
+    transition: all .4s ease;
+    /* text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3); */
+    /* text-shadow: none; */
+}
+
+.scrolling .header-content p {
+    color: transparent;
+    transition: all .4s ease;
+}
+
+.header.scrolling .video-overlay-header {
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: rgba(27, 40, 54, 0.5);
+    /* background-color: rgb(255, 255, 255); */
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
+}
+
+/* Adjust header background when scrolling */
+/* .header.scrolling .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+} */
+
+
+.header-content-video {
+    font-style: normal;
+    font-weight: 200;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 4em;
+}
+
+.header-content-video p {
+    margin-bottom: -.2em;
+}
+
+.content-video-title {
+    font-size: 6rem;
+    display: flex;
+    flex-direction: column;
+    padding-inline: .5em;
+    /* background-color: blue; */
+}
+
+.header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    justify-content: right;
+    align-items: end;
+    width: 100%;
+}
+
+.menu-button {
+    /* font-family: "Nunito Sans", sans-serif; */
+    font-weight: 100;
+    font-size: 1.2em;
+    padding: .5em;
+    border-radius: .5em;
+    border: none;
+
+    background-color: #4f45e4;
+    color: white
+}
+
+.menu-button:hover {
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: #382ce0;
+    transition: all 0.5s ease-out;
+}
+
+.title-video {
+    margin-bottom: -.2em;
+}
+
+
+/* For smaller screens */
+@media screen and (max-width: 1200px) {
+    .content-video-title {
+        font-size: 5rem;
+        /* Adjust to smaller size */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content-video-title {
+        font-size: 4.5rem;
+        /* Adjust further */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content-video-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Even smaller for mobile screens */
+
+@media screen and (max-width: 390px) {
+    .content-video-title {
+        font-size: 2.5rem;
+        /* Very small for smaller mobile screens */
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+} */
