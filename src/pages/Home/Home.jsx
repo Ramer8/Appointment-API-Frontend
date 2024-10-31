@@ -3,7 +3,6 @@ import "./Home.css"
 import Appointments from "../Appointments/Appointments"
 // import Services from "../Services/Services"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
-import Navbar from "../../components/Navbar/Navbar"
 
 export const Home = () => {
   // eslint-disable-next-line
@@ -16,8 +15,6 @@ export const Home = () => {
       <div className="homeDesign">
         {/* <div className="homeTitle">Tattoo Shop</div> */}
         {/* <Services /> */}
-        {/* <Navbar /> */}
-
         <HeaderVideo />
 
         {tokenStorage && <Appointments />}

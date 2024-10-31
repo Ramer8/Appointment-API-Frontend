@@ -11,9 +11,10 @@
     align-items: center;
 }
 
-ul {
+/* ul {
     width: 200px;
-}
+} */
+/* This line cause problems when the menu increase in Header component */
 
 .container {
     width: 100%;
