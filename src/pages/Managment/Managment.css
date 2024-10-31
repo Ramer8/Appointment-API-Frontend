@@ -196,18 +196,21 @@
 }
 
 
-ul {
-    margin: 12px;
+/* ul { */
+/* margin: 12px;
     padding: 0;
-    list-style: none;
-    width: 100%;
-    max-width: 320px;
+    list-style: none; */
+/* width: 100%; */
+/* max-width: 320px; */
+/* background-color: brown; */
+/* eliminar para modal pero para managment me tra justifica menu a la der cuando lo quito */
+/* } */
 
-    li {
-        margin: 16px 0;
-        position: relative;
-    }
+li {
+    margin: 16px 0;
+    position: relative;
 }
+
 
 html {
     box-sizing: border-box;
@@ -234,7 +237,7 @@ body {
 }
 
 @media(max-width: 800px) {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 @media (prefers-color-scheme: light) {
@@ -251,7 +254,6 @@ body {
 
     .card:not(:last-child) {
         margin-right: .5px;
-
     }
 }
 

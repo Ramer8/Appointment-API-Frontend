@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Lancelot&family=New+Rocker&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pirata+One&display=swap');
+
 .headerDesign {
-    height: 8vh;
+    font-family: "New Rocker", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    /* height: 8vh; */
     width: 100vw;
+    /* width: 100%; */
     border-radius: 2em;
     display: flex;
     flex-direction: row;
@@ -8,21 +14,28 @@
     align-items: center;
     box-shadow: 1px 1px 5px 1px rgba(255, 0, 238, 0.341);
     background-color: transparent;
-    z-index: -2;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: fit-content;
+    gap: .5em;
+}
+
+.to-column {
+    flex-direction: column;
+    gap: 0em;
 }
 
 .menuHighlighted {
-    display: flex;
-    flex-direction: row;
-    font-weight: bolder;
+    /* display: flex; */
+    /* flex-direction: row; */
     color: deeppink;
     font-weight: bolder;
-
+    justify-content: center;
 }
 
 

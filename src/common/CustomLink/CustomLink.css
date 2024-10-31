@@ -1,8 +1,8 @@
 .navigateDesign {
     color: whitesmoke;
 
-    transition: 0.4s;
-    margin: 1em;
+    transition: all 0.4s;
+    /* margin: 1em; */
     border-radius: 1em;
     font-weight: 300;
 

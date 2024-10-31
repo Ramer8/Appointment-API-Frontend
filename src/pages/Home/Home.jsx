@@ -16,7 +16,7 @@ export const Home = () => {
       <div className="homeDesign">
         {/* <div className="homeTitle">Tattoo Shop</div> */}
         {/* <Services /> */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         <HeaderVideo />
 

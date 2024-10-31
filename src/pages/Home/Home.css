@@ -1,8 +1,8 @@
 .homeDesign {
-    /* height: 88vh;
+    height: 88vh;
     height: auto;
     width: 100vw;
-
+    /*
     display: flex; */
     /* justify-content: space-around; */
     /* align-items: center;
@@ -10,7 +10,7 @@
     font-size: medium;
     gap: 2em; */
     /* color: whitesmoke */
-    /* min-height: 100vh; */
+    min-height: 100vh;
     /* display: flex; */
     overflow-x: hidden;
     flex-direction: column;
