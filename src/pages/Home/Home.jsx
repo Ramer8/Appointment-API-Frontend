@@ -1,8 +1,9 @@
 import { useState } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
-// import Services from "../Services/Services"
+import Services from "../Services/Services"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
+import Service from "../Service"
 
 export const Home = () => {
   // eslint-disable-next-line
@@ -14,8 +15,9 @@ export const Home = () => {
     <>
       <div className="homeDesign">
         {/* <div className="homeTitle">Tattoo Shop</div> */}
-        {/* <Services /> */}
         <HeaderVideo />
+        <Services />
+        <Service />
 
         {tokenStorage && <Appointments />}
       </div>

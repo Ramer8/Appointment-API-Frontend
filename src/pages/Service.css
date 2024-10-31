@@ -1,0 +1,109 @@
+.service-design {
+    padding: 1em;
+    display: flex;
+    height: 120vh;
+
+    /* display: flex; */
+    /* flex-direction: row; */
+    padding-inline: 3em;
+    gap: 1em;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+
+.box-service {
+    padding-bottom: 1em;
+    padding-right: 2em;
+    margin-inline: 0em;
+    /* background-color: blueviolet; */
+}
+
+.content-service {
+    /* width: 50%; */
+    /* background-color: blue; */
+    margin: 4em;
+}
+
+.title-paragraph {
+    font-size: 1.8em;
+}
+
+.title-service-name {
+    font-size: 1.2em;
+}
+
+.title-paragraph,
+.title-service-name {
+    font-family: "New Rocker", system-ui;
+}
+
+.service-paragraph {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+.description-service {
+    font-size: .8em;
+}
+
+.service-paragraph,
+.description-service {
+    font-family: "Lancelot", serif;
+}
+
+.text-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: .1em;
+}
+
+.images-service {
+    display: flex;
+    width: 40%;
+    /* background-color: darkblue; */
+    /* align-items: flex-start; */
+    align-items: center;
+}
+
+.left-side-img {
+    display: flex;
+
+    border-radius: 2em;
+    min-width: 20%;
+    max-width: 15em;
+}
+
+.grid-service {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1em;
+}
+
+.card-service {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+.icon-service-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1em;
+}
+
+.card-icon {
+    background-color: deeppink;
+    border-radius: 50%;
+
+    padding: .5em;
+    width: 63px;
+    height: 63px;
+}

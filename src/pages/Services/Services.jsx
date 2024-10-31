@@ -28,7 +28,6 @@ const Services = () => {
       fetchServices()
     }
   }, [])
-
   return (
     <>
       {!services ? (
