@@ -62,11 +62,6 @@
     gap: .7em;
 }
 
-.isSuperAdmin {
-    /* margin-right: 9em; */
-}
-
-/* If user is SuperAdmin change this margin because appear managment menu and menu row turn oversized */
 
 .navbar-links li {
     text-decoration: none;

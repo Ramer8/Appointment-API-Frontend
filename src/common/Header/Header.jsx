@@ -102,10 +102,23 @@ export const Header = () => {
           }
           destination="/home"
         />
+        {/* If user is SuperAdmin add this class to change margin because appear managment menu and
+        menu row turn oversized */}
         <ul
           className={`nav-links-mobile
             ${isMobileMenuOpen && width < 768 ? "show" : "nav-links"}
                 }`}
+          // className={`nav-links-mobile
+          //   ${
+          //     isMobileMenuOpen && width < 768
+          //       ? "show"
+          //       : ` nav-links ${
+          //           decoded
+          //             ? decoded.tokenData.roleName === "super_admin" &&
+          //               "isSuperAdmin"
+          //             : ""
+          //         }`
+          //   }`}
         >
           <li>
             {decoded
