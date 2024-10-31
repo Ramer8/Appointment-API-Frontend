@@ -1,11 +1,11 @@
 .service-design {
     padding: 1em;
     display: flex;
-    height: 120vh;
+    /* height: 120vh; */
 
     /* display: flex; */
     /* flex-direction: row; */
-    padding-inline: 3em;
+    padding-inline: 2em;
     gap: 1em;
     width: 100%;
 
@@ -18,14 +18,13 @@
 .box-service {
     padding-bottom: 1em;
     padding-right: 2em;
-    margin-inline: 0em;
     /* background-color: blueviolet; */
 }
 
 .content-service {
     /* width: 50%; */
     /* background-color: blue; */
-    margin: 4em;
+    margin: 2em;
 }
 
 .title-paragraph {
