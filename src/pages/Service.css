@@ -28,11 +28,11 @@
 }
 
 .title-paragraph {
-    font-size: 1.8em;
+    font-size: 2.5em;
 }
 
 .title-service-name {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .title-paragraph,
@@ -43,11 +43,11 @@
 .service-paragraph {
     margin-top: 1em;
     margin-bottom: 1em;
-
+    font-size: 1.4em;
 }
 
 .description-service {
-    font-size: .8em;
+    font-size: 1em;
 }
 
 .service-paragraph,
@@ -105,4 +105,10 @@
     padding: .5em;
     width: 63px;
     height: 63px;
+}
+
+.card-service:hover {
+    opacity: .5;
+    cursor: pointer;
+
 }

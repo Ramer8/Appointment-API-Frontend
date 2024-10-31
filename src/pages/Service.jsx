@@ -4,7 +4,13 @@ import "./Service.css"
 import { getServices } from "../services/apiCalls"
 const Service = () => {
   const [services, setServices] = useState()
+  const [hoveredId, setHoveredId] = useState(null)
 
+  // Función que se ejecuta al pasar el mouse sobre el elemento
+  const handleMouseEnter = (id) => {
+    setHoveredId(id) // Guarda el id en el estado
+    console.log("ID del elemento con hover:", id)
+  }
   useEffect(() => {
     const fetchServices = async () => {
       try {
@@ -42,7 +48,11 @@ const Service = () => {
         </div>
         <div className="grid-service">
           {services?.map((element) => (
-            <div className="card-service" key={element.id}>
+            <div
+              className="card-service"
+              onMouseEnter={() => handleMouseEnter(element.id)} // Evento onMouseEnter
+              key={element.id}
+            >
               <div className="icon-service-content">
                 <img
                   className="card-icon"
@@ -55,12 +65,24 @@ const Service = () => {
                 <div className="title-service-name">{element.serviceName}</div>
                 <div className="description-service">{element.description}</div>
               </div>
-              {/* <Card element={element} /> */}
             </div>
           ))}
         </div>
       </div>
       <div className="images-service">
+        {services?.map((element) => {
+          // Comprueba si el id del elemento coincide con hoveredId
+          if (element.id === hoveredId) {
+            return (
+              <img
+                key={element.id}
+                src={element.image}
+                className="left-side-img"
+              ></img>
+            )
+          }
+          return null // Retorna null si no hay coincidencia
+        })}
         <img
           className="left-side-img"
           src={"./img/Rectangle_4.jpg"}
