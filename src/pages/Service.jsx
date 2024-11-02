@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-// import Card from "../common/Card/Card"
 import "./Service.css"
 import { getServices } from "../services/apiCalls"
 const Service = () => {
