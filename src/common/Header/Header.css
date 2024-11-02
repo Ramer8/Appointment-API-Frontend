@@ -55,7 +55,6 @@
 }
 
 /* from navbar css */
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Lancelot&family=New+Rocker&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pirata+One&display=swap');
 
 /* Navbar Styles */
 .navbar {
@@ -205,7 +204,7 @@
         overflow: hidden;
         transform: translateY(-5em);
         /* transition: max-height 0.5s ease, opacity 0.5s ease, transform .5s ease-in-out, font-size .7s ease; */
-        transition: all .5s ease-out;
+        transition: all .2s ease-out;
     }
 
     .nav-links-mobile li {
