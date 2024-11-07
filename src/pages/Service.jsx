@@ -20,7 +20,6 @@ const Service = () => {
           //  setMsgError(fetched.message)
         }
         // setLoadedData(true)
-        console.log(fetched.data)
         setServices(fetched.data)
 
         // setServices({

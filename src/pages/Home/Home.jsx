@@ -1,7 +1,6 @@
 import { useState } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
-import Services from "../Services/Services"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
 import Service from "../Service"
 
@@ -13,10 +12,9 @@ export const Home = () => {
 
   return (
     <>
+      <HeaderVideo />
       <div className="homeDesign">
         {/* <div className="homeTitle">Tattoo Shop</div> */}
-        <HeaderVideo />
-        <Services />
         <Service />
 
         {tokenStorage && <Appointments />}

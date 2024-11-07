@@ -61,6 +61,7 @@
 
     display: table-cell;
     padding: 8px;
+    background-color: ;
 }
 
 .header>div {
@@ -69,7 +70,7 @@
 
 .row:nth-child(even) {
 
-    background-color: dimgray;
+    background-color: rgba(105, 105, 105, 0.365);
     /* Optional: Alternate row colors */
 }
 
