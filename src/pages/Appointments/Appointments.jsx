@@ -90,7 +90,11 @@ const Appointments = () => {
       if (fetched?.success) {
         toast.success(fetched.message, { theme: "dark" })
       }
-      setNewAppointment({ appointment_date: "", service_id: "" })
+      setNewAppointment({
+        ...newAppointment,
+        service_id: "",
+        appointment_date: "", // Reset appointment date if desired
+      })
       setAppointmentChanged(!appointmentChanged) // to update appointment list
     } catch (error) {
       console.log(error)
@@ -108,6 +112,7 @@ const Appointments = () => {
       ...prevState,
       service_id: Number(formJson.id),
     }))
+
     if (!newAppointment.appointment_date) {
       setMsgError("Please set a date & time")
       return
@@ -132,11 +137,12 @@ const Appointments = () => {
         .replace("T", " ")
         .slice(0, 19),
     }))
-    if (!newAppointment.service_id) {
+    if (newAppointment.service_id) {
       setMsgError("Please set a service")
       return
     }
   }
+  console.log(!newAppointment.service_id)
   return (
     <>
       {appointments && (
@@ -174,10 +180,21 @@ const Appointments = () => {
                       name="id"
                       defaultValue={newAppointment.service_id || ""}
                       className="selectAppointmentList"
+                      onChange={(e) => {
+                        setNewAppointment((prevState) => ({
+                          ...prevState,
+                          service_id: Number(e.target.value),
+                        }))
+                        // Clear the error message when a service is selected
+                        if (msgError) setMsgError("")
+                      }}
                     >
-                      {services?.map((services) => (
-                        <option key={services.id} value={services.id}>
-                          {services.serviceName}
+                      <option value="" disabled>
+                        Select a service
+                      </option>
+                      {services?.map((service) => (
+                        <option key={service.id} value={service.id}>
+                          {service.serviceName}
                         </option>
                       ))}
                     </select>
@@ -196,19 +213,21 @@ const Appointments = () => {
                   </div>
                   <div className="dateAndError">
                     <CustomInput
-                      className="inputDesign inputDate"
+                      className={`inputDesign ${
+                        !newAppointment.service_id
+                          ? "inputDateBlock"
+                          : "inputDate"
+                      } `}
                       type="datetime-local"
                       min={new Date()}
                       name="appointment_date"
-                      disabled={false}
-                      // disabled={!newAppointment.service_id ? false : true}
+                      disabled={!newAppointment.service_id} // Disable if no service is selected
                       value={
                         formatDate(
                           newAppointment?.appointment_date || new Date()
                         ) || ""
                       }
                       functionChange={(e) => inputHandler(e)}
-                      // onBlurFunction={(e) => checkError(e)}
                     />
                     {msgError && <div className="errorDate">{msgError}</div>}
                   </div>

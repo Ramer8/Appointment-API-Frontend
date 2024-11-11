@@ -43,18 +43,39 @@
     font-style: normal;
     font-variation-settings: none;
 
+    border: 1px solid gray;
+
     width: max-content;
     box-shadow: none;
     background-color: gray;
     color: black;
+    cursor: pointer;
 }
 
 .inputDate:hover {
-    cursor: pointer;
     color: white;
     border: 1px solid white;
     background-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
+
+.inputDateBlock {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200px;
+    font-style: normal;
+    font-variation-settings: none;
+
+    width: max-content;
+    box-shadow: none;
+    background-color: dimgray;
+
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: whitesmoke;
+}
+
+
 
 ::-webkit-calendar-picker-indicator {
     cursor: pointer;

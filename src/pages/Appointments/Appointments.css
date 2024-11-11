@@ -81,11 +81,19 @@
     border: none;
     border-radius: 1em;
     outline: white;
+    border: 1px solid darkgray;
     background-color: darkgray;
     width: 70%;
     color: black;
     font-weight: 600;
     font-size: medium;
+}
+
+.selectAppointmentList:hover {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 .addAppointment {
