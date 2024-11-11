@@ -104,22 +104,30 @@ const Appointments = () => {
     const form = e.target
     const formData = new FormData(form)
     const formJson = Object.fromEntries(formData.entries())
-
     setNewAppointment((prevState) => ({
       ...prevState,
       service_id: Number(formJson.id),
     }))
     if (!newAppointment.appointment_date) {
-      setMsgError("Please set a date & hour")
+      setMsgError("Please set a date & time")
       return
     }
     createMyAppointment(newAppointment)
   }
 
   const inputHandler = (e) => {
+    const value = e.target.value
+    // Regular expression to validate "YYYY-MM-DDTHH:MM" format
+    const dateTimeRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/
+
+    // Check if the input value matches the format
+    if (!dateTimeRegex.test(value)) {
+      setMsgError("Enter a valid date in the format DD-MM-YYYY HH:MM")
+      return
+    }
     setNewAppointment((prevState) => ({
       ...prevState,
-      [e.target.name]: new Date(e.target.value)
+      [e.target.name]: new Date(value)
         .toISOString()
         .replace("T", " ")
         .slice(0, 19),
@@ -129,7 +137,6 @@ const Appointments = () => {
       return
     }
   }
-
   return (
     <>
       {appointments && (
@@ -165,10 +172,10 @@ const Appointments = () => {
                   <div className="rowAppointmentNew">
                     <select
                       name="id"
-                      defaultValue={services.id}
+                      defaultValue={newAppointment.service_id || ""}
                       className="selectAppointmentList"
                     >
-                      {services.map((services) => (
+                      {services?.map((services) => (
                         <option key={services.id} value={services.id}>
                           {services.serviceName}
                         </option>
@@ -189,15 +196,15 @@ const Appointments = () => {
                   </div>
                   <div className="dateAndError">
                     <CustomInput
-                      className={`inputDesign inputDate`}
-                      type={"datetime-local"}
+                      className="inputDesign inputDate"
+                      type="datetime-local"
                       min={new Date()}
-                      placeholder={""}
-                      name={"appointment_date"}
-                      disabled={""}
+                      name="appointment_date"
+                      disabled={false}
+                      // disabled={!newAppointment.service_id ? false : true}
                       value={
                         formatDate(
-                          newAppointment.appointment_date || new Date()
+                          newAppointment?.appointment_date || new Date()
                         ) || ""
                       }
                       functionChange={(e) => inputHandler(e)}
