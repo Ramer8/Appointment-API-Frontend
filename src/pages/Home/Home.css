@@ -9,7 +9,6 @@
     flex-direction: column;
     font-size: medium;
     gap: 2em;
-    /* color: whitesmoke */
     min-height: 100vh;
     overflow-x: hidden;
 
@@ -18,5 +17,4 @@
     justify-content: center;
     /* font-size: calc(10px + 2vmin); */
     /* cambia el tamano de la funte en funcion del largo y alto */
-    color: white;
 }
