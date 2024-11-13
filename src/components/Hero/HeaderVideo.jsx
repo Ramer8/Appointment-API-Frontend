@@ -15,7 +15,7 @@ const Header = ({ scrollToAppointment }) => {
   }, [])
   return (
     <div>
-      <header className={`header-video ${scrollY > 200 ? "scrolling" : ""}`}>
+      <header className={`header-video ${scrollY > 300 ? "scrolling" : ""}`}>
         <video
           autoPlay
           loop
