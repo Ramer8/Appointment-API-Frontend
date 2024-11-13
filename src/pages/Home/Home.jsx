@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
@@ -14,7 +14,6 @@ export const Home = () => {
   )
   // Scroll to menu component
   const appointmentRef = useRef(null)
-
   const navigate = useNavigate()
   const scrollToAppointment = () => {
     if (!tokenStorage) {
