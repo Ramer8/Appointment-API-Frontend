@@ -29,7 +29,6 @@ const Header = ({ scrollToAppointment }) => {
         </video>
         <div className="video-overlay-header"></div>
         <div className="header-content-video">
-          {/* <p>Dr.</p> */}
           <div className="content-video-title">
             <div className="title-video">Tattoo</div>
             <div>Shop</div>

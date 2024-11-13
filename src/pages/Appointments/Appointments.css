@@ -24,8 +24,8 @@
     color: darkgray;
 
     /* color: black;
-    background-color: darkolivegreen;
-    */
+    background-color: darkolivegreen; */
+
 }
 
 .appointmentContainer {
@@ -225,11 +225,7 @@
 
 @media (min-width: 500px) {
     .appointmentDesign {
-        width: 80%;
-        /* display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center; */
+        width: 95%;
     }
 
     .appointmentContainer {
@@ -250,9 +246,6 @@
 @media (min-width: 800px) {
     .appointmentDesign {
         width: 70%;
-        /* flex-direction: row;
-        justify-content: center;
-        align-items: center; */
     }
 
     .appointmentContainer {
