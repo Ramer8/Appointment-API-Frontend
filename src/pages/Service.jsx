@@ -34,6 +34,7 @@ const Service = () => {
     if (!services) {
       fetchServices()
     }
+    // eslint-disable-next-line
   }, [])
   return (
     <div className="service-design">

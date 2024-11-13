@@ -9,8 +9,8 @@
 
 }
 
-.footer {
-    height: 30vh;
+.login-footer {
+    /* height: 30vh; */
     width: 100vw;
     gap: 1em;
     display: flex;

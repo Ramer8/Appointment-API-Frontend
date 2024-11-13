@@ -132,7 +132,7 @@ export const Login = () => {
           functionEmit={logMe}
         />
 
-        <div className="footer">
+        <div className="login-footer">
           {credencialesError.emailError && (
             <div className="error">{credencialesError.emailError}</div>
           )}

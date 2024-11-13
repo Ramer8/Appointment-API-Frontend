@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
@@ -11,13 +11,19 @@ export const Home = () => {
   const [tokenStorage, setTokenStorage] = useState(
     JSON.parse(localStorage.getItem("decoded"))?.token
   )
+  // Scroll to menu component
+  const appointmentRef = useRef(null)
+
+  const scrollToAppointment = () => {
+    appointmentRef.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <>
-      <HeaderVideo />
+      <HeaderVideo scrollToAppointment={scrollToAppointment} />
       <div className="homeDesign">
         <Service />
-
+        <div ref={appointmentRef}></div>
         {tokenStorage && <Appointments />}
       </div>
       <Footer />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./HeaderVideo.css"
 
-const Header = ({ scrollToPosition }) => {
+const Header = ({ scrollToAppointment }) => {
   const [scrollY, setScrollY] = useState(0)
 
   const handleScroll = () => {
@@ -36,8 +36,8 @@ const Header = ({ scrollToPosition }) => {
           </div>
         </div>
         <div className="header-button">
-          <button className="menu-button" onClick={scrollToPosition}>
-            Pedir Turno
+          <button className="menu-button" onClick={scrollToAppointment}>
+            Make a booking
           </button>
         </div>
       </header>
