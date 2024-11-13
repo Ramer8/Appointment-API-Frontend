@@ -3,7 +3,7 @@
 .header-video {
     font-family: "New Rocker", system-ui;
     position: relative;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     color: whitesmoke;
     letter-spacing: -2.5px;
@@ -164,6 +164,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .header-video {
+        height: 80vh;
+    }
+
     .content-video-title {
         font-size: 3.5rem;
     }
