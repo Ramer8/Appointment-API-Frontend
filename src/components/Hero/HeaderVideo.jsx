@@ -24,7 +24,7 @@ const Header = ({ scrollToAppointment }) => {
           className="background-video-header"
           poster="/tattoopic.jpg"
         >
-          <source src="/vieotattoo.mp4" type="video/mp4" />
+          <source src="/videotattoo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay-header"></div>
