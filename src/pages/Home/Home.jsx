@@ -1,10 +1,11 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import "./Home.css"
 import Appointments from "../Appointments/Appointments"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
 import Service from "../Service"
 import Footer from "../../components/Footer/Footer"
 import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton"
+import { useNavigate } from "react-router-dom"
 
 export const Home = () => {
   // eslint-disable-next-line
@@ -14,8 +15,17 @@ export const Home = () => {
   // Scroll to menu component
   const appointmentRef = useRef(null)
 
+  const navigate = useNavigate()
   const scrollToAppointment = () => {
-    appointmentRef.current.scrollIntoView({ behavior: "smooth" })
+    if (!tokenStorage) {
+      console.log("no registered")
+      appointmentRef.current.scrollIntoView({ behavior: "smooth" })
+      setTimeout(() => {
+        navigate("/login")
+      }, 1000)
+    } else {
+      appointmentRef.current.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
