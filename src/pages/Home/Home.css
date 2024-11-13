@@ -20,29 +20,3 @@
     /* cambia el tamano de la funte en funcion del largo y alto */
     color: white;
 }
-
-.homeTitle {
-    padding-top: 1em;
-    font-size: 1.5em;
-    background-color: transparent;
-}
-
-.footerHome {
-    height: auto;
-    padding: 1em;
-    width: 100%;
-    font-size: .9em;
-    margin: 0em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 1.5em;
-}
-
-.socialIcons {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin-bottom: 1em;
-    gap: 3em;
-}
