@@ -79,7 +79,11 @@ export const Header = () => {
       <nav className={`navbar ${scrollY > 100 ? "scrolling" : ""}`}>
         <CustomLink
           title={
-            <div className="navbar-brand">
+            <div
+              className={`${
+                location.pathname === "/" ? "navbar-brand-none" : "navbar-brand"
+              }`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -146,7 +150,8 @@ export const Header = () => {
                   ? "Services"
                   : "Home"
               }`}
-              destination="/"
+              onClick={() => setMobileMenuOpen(false)}
+              // destination="/"
               className={`${
                 location.pathname === "/" || location.pathname === "/services"
                   ? "menuHighlighted"
