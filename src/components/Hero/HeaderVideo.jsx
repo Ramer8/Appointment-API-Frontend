@@ -15,7 +15,7 @@ const Header = ({ scrollToAppointment }) => {
   }, [])
   return (
     <div>
-      <header className={`header-video ${scrollY > 300 ? "scrolling" : ""}`}>
+      <header className={`header-video ${scrollY > 200 ? "scrolling" : ""}`}>
         <video
           autoPlay
           loop
@@ -24,7 +24,7 @@ const Header = ({ scrollToAppointment }) => {
           className="background-video-header"
           poster="/tattoopic.jpg"
         >
-          <source src="/videotattoo.mp4" type="video/mp4" />
+          <source src="/vieotattoo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay-header"></div>
