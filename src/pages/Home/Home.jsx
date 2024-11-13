@@ -4,6 +4,7 @@ import Appointments from "../Appointments/Appointments"
 import HeaderVideo from "../../components/Hero/HeaderVideo"
 import Service from "../Service"
 import Footer from "../../components/Footer/Footer"
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton"
 
 export const Home = () => {
   // eslint-disable-next-line
@@ -20,6 +21,7 @@ export const Home = () => {
         {tokenStorage && <Appointments />}
       </div>
       <Footer />
+      <ScrollToTopButton />
     </>
   )
 }

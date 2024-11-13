@@ -1,0 +1,28 @@
+.scroll-top-design {
+    display: flex;
+    padding: .5em;
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    margin: 0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: #007bff;
+    background-color: magenta;
+    opacity: .6;
+}
+
+.scroll-top-design:hover {
+    color: black;
+    transition: color .3s ease-out;
+}
+
+@media screen and (max-width: 500px) {
+    .scroll-top-design {
+        font-size: .5rem;
+        right: 30px;
+    }
+}
