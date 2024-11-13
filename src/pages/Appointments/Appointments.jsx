@@ -113,6 +113,10 @@ const Appointments = () => {
       service_id: Number(formJson.id),
     }))
 
+    if (!newAppointment.appointment_date && !newAppointment.service_id) {
+      setMsgError("Please set a service and date")
+      return
+    }
     if (!newAppointment.appointment_date) {
       setMsgError("Please set a date & time")
       return
@@ -137,12 +141,7 @@ const Appointments = () => {
         .replace("T", " ")
         .slice(0, 19),
     }))
-    if (newAppointment.service_id) {
-      setMsgError("Please set a service")
-      return
-    }
   }
-  console.log(!newAppointment.service_id)
   return (
     <>
       {appointments && (
